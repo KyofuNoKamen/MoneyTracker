@@ -211,26 +211,36 @@
 }
 
 .table {
-  width: 80px;
   left: 45px;  
   position: absolute;
   background-color: rgba(162, 166, 65, 1);
   width: 1000px;
-  height: 300px;
-  margin-top: 40px;
+  height: 275px;
+  margin-top: 65px;
   overflow: auto;
 }
 .table2 {
-  width: 80px;
   position: absolute;
   background-color: rgba(162, 166, 65, 1);
   width: 1000px;
-  height: 300px;
-  
+  height: 275px;
 }
-.table3 {
+#id12 {
+  position: relative;
   height: 50px; 
   color: white;
-  background-color: rgba(162, 166, 65, 1);
+  background-color: olive ; 
+  width: 100px;
+  max-width: 100px;
+  word-wrap: break-word;
+}
+
+#id13 {
+  position: relative;
+  height: 50px; 
+  color: white;
+  background-color: olive ; 
+  width: 200px;
   max-width: 200px;
 }
+

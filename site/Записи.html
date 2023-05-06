@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ua"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Записи</title>
+    <link rel="stylesheet" href="Записи.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
+
+<body> 
+<!-- -->
+    <div class="container">
+       
+        <div class="container2">
+             <div class="container3"> 
+                MyCASH
+                дата
+             </div>
+             <button style="color: yellow;" id="income-btn" >Дохід</button>
+             <button style="color: white;" id="expense-btn">Витрата</button>
+
+             <div class="container4">
+
+                <p id="incomeText">Додайте свій дохід</p>
+                <p id="expenseText" style="display: none;">Додайте свою витрату</p>
+                <p id="id3">Категорія</p>
+
+                <select id="incomeList">
+                    <option value="1">Елемент 1</option>
+                    <option value="2">Елемент 2</option>
+                    <option value="3">Елемент 3</option>
+                  </select>
+
+                  <select id="expenseList" style="display: none;">
+                    <option value="1">Елемент 4</option>
+                    <option value="2">Елемент 5</option>
+                    <option value="3">Елемент 6</option>
+                  </select>
+
+                  <p id="id4">Варіант</p>
+
+                  <select id="moneyList">
+                    <option value="1">Елемент 1</option>
+                    <option value="2">Елемент 2</option>
+                    <option value="3">Елемент 3</option>
+                  </select>
+
+                  <p id="id5">Сума</p>
+                  <input type="text" id="id6"></input>
+
+                  <p id="id9"> Дата</p>
+
+                  <input type="text" value="01.05.2023" id="id8"></input>
+
+                  <p id="id10"> Примітка</p>
+                  <input type="text" id="id11"></input>
+
+                  <script>
+
+                const incomeBtn = document.getElementById('income-btn');
+                const expenseBtn = document.getElementById('expense-btn');
+
+                // обрабник кліку на кнопку доходів
+                incomeBtn.addEventListener('click', function() {
+                // ховаємо форму витрат і показуємо форму доходів
+                expenseList.style.display = 'none';
+                expenseText.style.display = 'none';
+                incomeBtn.style.color = 'yellow';
+                expenseBtn.style.color = 'white';
+                incomeList.style.display = 'block';
+                incomeText.style.display = 'block';
+                });
+
+                // обрабник кліку на кнопку витрат
+                expenseBtn.addEventListener('click', function() {
+                // ховаємо форму доходів і показуємо форму витрат
+                incomeList.style.display = 'none';
+                incomeText.style.display = 'none';
+                incomeBtn.style.color = 'white';
+                expenseBtn.style.color = 'yellow';
+                expenseList.style.display = 'block';
+                expenseText.style.display = 'block';
+              
+                });
+
+                  </script>
+                
+                <input type="submit" value="Записати" id="id7"></input>
+
+             </div>
+
+             <div class="container5">
+              
+             </div>
+
+        </div> 
+        
+        
+    </div>
+
+
+</div>
+<script>
+</script>
+
+</body>
+</html>

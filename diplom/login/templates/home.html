@@ -1,31 +1,101 @@
-{% extends 'base.html' %}
-{% block content %}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ua">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Головна</title>
+    <link rel="stylesheet" href="Головна.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
+</head>
+<body> 
+<!-- -->
+    <div class="container">
+
+        <div class="container2">
+            <div class="container3"> 
+
+                <p id="id7">Доходи за місяць</p>
+                <p id="id6">Зарплата:   0 грн.</p>
+                <p id="id6">Бізнес:   0 грн.</p>
+                <p id="id6">% з депозиту:   0 грн.</p>
+                <p id="id6">Подарунки:   0 грн.</p>
+                <p id="id6">Інвестиції:   0 грн.</p>
+                <p id="id6">Інше:   0 грн.</p>
+                <p id="id6">Всього:   0 грн.</p>
+
+            </div> 
+
+            <div class="container4"> 
+
+                <p id="id7">Витрати за місяць</p>
+                <p id="id6">Харчування:   0 грн.</p>
+                <p id="id6">Житло:   0 грн.</p>
+                <p id="id6">Зв'язок:   0 грн.</p>
+                <p id="id6">Транспорт:   0 грн.</p>
+                <p id="id6">Відпочинок:   0 грн.</p>
+                <p id="id6">Цілі:   0 грн.</p>
+                <p id="id6">Інше:   0 грн.</p>
+                <p id="id6">Всього:   0 грн.</p>
+
+            </div> 
+
+            <div class="container5">
+
+                <div id="id3"></div>
+                <div id="id4"></div>
+                <div id="id5"></div>
+
+                <div class="container9">
+                    <p id="id1">USD to UAH - 36.92</p>
+                    <p id="id2">EUR to UAH - 39.12</p>
+                </div>
+
+                 <div class="container10">
+                    <p id="id1">GBR to UAH - 36.92</p>
+                    <p id="id2">EUR to UAH - 39.12</p>
+                </div>
+
+                <div class="container11">
+                    <p id="id1">GBR to UAH - 36.92</p>
+                    <p id="id2">EUR to UAH - 39.12</p>
+                </div>
+                
+                <div class="container12">
+                    <p id="id1">GBR to UAH - 36.92</p>
+                    <p id="id2">EUR to UAH - 39.12</p>
+                </div>
+
+            </div> 
+
+             <div class="container6"> 
+                MyCASH
+                дата
+             </div>
+
+            <div class="container7"> 
+
+                <p id="id7">Заощадження</p>
+                <p id="id8">Рахунки в банку:   0 UAH</p>
+                <p id="id9">0 USD</p>
+                <p id="id10">Готівка:   0 UAH</p>
+                <p id="id11">0 USD</p>
+                <p id="id10">Депозити:   0 UAH</p>
+                <p id="id12">0 USD</p>
+                <p id="id10">Всього:   0 UAH</p>
+                <p id="id13">0 USD</p>
+            
+            </div>
+
+            <div class="container8"> </div>
+        </div> 
+        
+        
+    </div>
 
 
-<ul class="navbar-expand-md me-auto mb-2 mb-lg-0">
+</div>
+<script>
+</script>
 
-    {% if user.is_authenticated %}
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-    </li>
-
-    {% else %}
-
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'login' %}">Login</a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="{% url 'register' %}">Register</a>
-    </li>
-
-    {% endif %}
-
-
-</ul>
-
-
-
-
-
-{% endblock %}
+</body>
+</html>

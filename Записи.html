@@ -3,26 +3,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Записи</title>
-    <link rel="stylesheet" href="Записи.css" media="screen">
+    <link rel="stylesheet" href="Main.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
 
 <body> 
 <!-- -->
-    <div class="container">
+    <div class="main-background">
        
-        <div class="container2">
-             <div class="container3"> 
+        <div class="side-panel">
+             <div class="top-panel"> 
                 MyCASH
                 дата
              </div>
              <button style="color: yellow;" id="income-btn" >Дохід</button>
              <button style="color: white;" id="expense-btn">Витрата</button>
 
-             <div class="container4">
+             <div class="addition">
 
                 <p id="incomeText">Додайте свій дохід</p>
                 <p id="expenseText" style="display: none;">Додайте свою витрату</p>
-                <p id="id3">Категорія</p>
+                <p id="category">Категорія</p>
 
                 <select id="incomeList">
                     <option value="1"selected>Зарплата</option>
@@ -44,7 +44,7 @@
                     <option>Інше</option>
                   </select>
 
-                  <p id="id4">Варіант</p>
+                  <p id="version">Варіант</p>
 
                   <select id="moneyList">
                     <option value="1">Готівка</option>
@@ -53,15 +53,15 @@
                     
                   </select>
 
-                  <p id="id5">Сума</p>
-                  <input type="text" id="id6"></input>
+                  <p id="sum">Сума</p>
+                  <input type="text" id="input1"></input>
 
-                  <p id="id9"> Дата</p>
+                  <p id="date"> Дата</p>
 
-                  <input type="text" value="01.05.2023" id="id8"></input>
+                  <input type="text" value="01.05.2023" id="input2"></input>
 
-                  <p id="id10"> Примітка</p>
-                  <input type="text" id="id11"></input>
+                  <p id="note"> Примітка</p>
+                  <input type="text" id="input3"></input>
 
                   <script>
 
@@ -93,47 +93,34 @@
 
                   </script>
                 
-                <input type="submit" value="Записати" id="id7"></input>
+                <input type="submit" value="Записати" id="record-button"></input>
 
              </div>
 
-             <div class="container5">
+             <div class="reflection">
 
                 <div class="table">
-                    
                     <table class="table2">
                         <tr>
-                          <th id="id12">Дата</th>
-                          <th id="id12">Категорія</th>
-                          <th id="id12">Варіант</th>  
-                          <th id="id12">Сума</th>
-                          <th id="id13">Примітка</th>
+                          <th id="table1">Дата</th>
+                          <th id="table1">Категорія</th>
+                          <th id="table1">Варіант</th>  
+                          <th id="table1">Сума</th>
+                          <th id="table2">Примітка</th>
                         </tr>
                         <tr>
-                          <td id="id12">dааааааа</td>
-                          <td id="id12">Яff</td>
-                          <td id="id12">ааааааааe 3</td>
-                          <td id="id12">Ячейка 3</td>
-                          <td id="id13">Ячейка 3</td>
+                          <td id="table1">dааааааа</td>
+                          <td id="table1">Яff</td>
+                          <td id="table1">ааааааааe 3</td>
+                          <td id="table1">Ячейка 3</td>
+                          <td id="table2">Ячейка 3</td>
                         </tr>
-                        
-        
                       </table>   
                 </div>
-
-        
-
              </div>
-
         </div> 
-        
-        
     </div>
-
-
 </div>
-<script>
-</script>
 
 </body>
 </html>

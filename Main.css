@@ -1,0 +1,582 @@
+* {
+  font-family: 'Montserrat';
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
+  background: rgba(42,30,58,1);
+}
+body {
+  font-size: 14px;
+}
+
+/*контейнер фону*/
+.main-background {
+
+width: 100%;
+max-width: 1280px;
+height: 720px;
+margin: 0 auto;
+background-color: rgba(118, 110, 100, 1);
+}
+
+/*контейнер бокової панелі*/
+.side-panel {
+  width: 48px;
+  height: 720px;
+  background-color: rgba(162, 166, 65, 1);
+  position: absolute;
+}
+
+/*Контейнер верхньої панелі*/
+.top-panel {
+  width: 1280px;
+  height: 50px;
+  background: #3b444d; 
+  position: absolute;
+}
+
+/*Головна сторінка*/
+
+/*контейнер доходів за місяць*/
+.income-panel {
+  width: 384px;
+  height: 512px;
+  background: rgba(42,30,58,1);
+  border-radius: 5px;
+  position: absolute;
+  top: 66px;
+  left: 64px;
+
+}
+
+/*контейнер витрат за місяць*/ 
+.expenses-panel {
+  width: 384px;
+  height: 512px;
+  background: rgba(42,30,58,1);
+  border-radius: 5px;
+  position: absolute;
+  top: 66px;
+  left: 472px;
+}
+
+/*контейнер курсу валют*/
+.currency-panel {
+  background: rgba(42,30,58,1);
+  position: absolute;
+  height: 112px;
+  width: 792px;
+  left: 64px;
+  top: 592px;
+  border-radius: 5px;
+}
+
+/*заощадження*/
+.savings {
+background: rgba(42,30,58,1);
+position: absolute;
+border-radius: 5px;
+width: 384px;
+height: 304px;
+left: 880px;
+top: 66px;
+}
+
+/*Криптовалюта*/
+.cryptocurrency {
+background: rgba(42,30,58,1);
+position: absolute;
+border-radius: 5px;
+width: 384px;
+height: 320px;
+left: 880px;
+top: 384px;
+}
+
+/*Курс валют*/
+#currency1 {
+position: relative;
+margin-top: auto;
+margin-bottom: 20px;
+color: white;
+}
+
+#currency2 {
+  position: relative;
+  color: white;
+}
+
+/*4 контейнера відображення курсу валют*/
+.currency1 {
+position: absolute;
+width: 126px;
+height: 57px;
+left: 27px;
+margin-top: 28px;
+}
+
+.currency2 {
+position: absolute;
+width: 126px;
+height: 57px;
+left: 233px;
+margin-top: 28px;
+}
+
+.currency3 {
+position: absolute;
+width: 126px;
+height: 57px;
+left: 439px;
+margin-top: 28px;
+}
+
+.currency4 {
+position: absolute;
+width: 126px;
+height: 57px;
+left: 645px;
+margin-top: 28px;
+}
+
+/*розділення курсу валют*/
+#separation1 {
+position: absolute;
+width: 0px;
+height: 84px;
+left: 192px;
+top: 14px;
+border: 2px solid #161513;
+}
+
+#separation2 {
+position: absolute;
+width: 0px;
+height: 84px;
+left: 400px;
+top: 14px;
+border: 2px solid #161513;
+}
+
+#separation3 {
+position: absolute;
+width: 0px;
+height: 84px;
+left: 600px;
+top: 14px;
+border: 2px solid #161513;
+}
+
+/*Доходи та витрати за місяць*/
+#name {
+top: 20px;
+position: relative;
+font-size: 24px;
+color: white; 
+margin: 0 auto;
+text-align: center;
+width: 200px;
+}
+
+#retreat {
+top: 50px;
+position: relative;
+color: white;
+font-size: 18px;
+left: 70px;
+margin-bottom: 30px;
+width: 250px;
+}
+
+#location1 {
+left: 70px;
+top: 40px;
+position: relative;
+color: white;
+font-size: 18px;
+width: 200px;
+}
+
+#location2 {
+left: 205px;
+top: 40px;
+position: relative;
+color: white;
+font-size: 18px;
+width: 170px;
+margin-bottom: 15px;
+}
+
+#location3 {
+left: 70px;
+top: 40px;
+position: relative;
+color: white;
+font-size: 18px;
+width: 180px;
+}
+
+#location4 {
+left: 135px;
+top: 40px;
+position: relative;
+color: white;
+font-size: 18px;
+width: 200px;
+margin-bottom: 15px;
+}
+
+#location5 {
+left: 153px;
+top: 40px;
+position: relative;
+color: white;
+font-size: 18px;
+width: 200px;
+margin-bottom: 15px;
+}  
+
+#location6 {
+left: 133px;
+top: 40px;
+position: relative;
+color: white;
+font-size: 18px;
+width: 180px;
+}   
+
+
+
+/*Сторінка Записи*/
+#income-btn {
+position: absolute;
+left: 120px;
+font-size: 26px;
+margin-top: 80px; 
+}
+
+/*Контейнер для додавання записів*/
+.addition {
+width: 1090px;
+height: 100px;
+background: rgba(42,30,58,1);
+border-radius: 5px;
+position: absolute;
+top: 140px;
+left: 120px;
+}
+
+/*Контейнер для відображення записів*/
+.reflection {
+width: 1090px;
+height: 380px;
+background: rgba(42,30,58,1);
+border-radius: 5px;
+position: absolute;
+top: 280px;
+left: 120px;
+}
+
+#incomeText {
+  position: absolute;
+  color: white;
+  left: 60px;
+  font-size: 22px;
+  margin-top: 20px; 
+}
+
+#expenseText {
+  position: absolute;
+  color: white;
+  left: 60px;
+  font-size: 22px;
+  margin-top: 20px; 
+}
+
+#category {
+  position: absolute;
+  color: white;
+  left: 60px;
+  font-size: 18px;
+  margin-top: 50px;
+}
+
+#version {
+  position: absolute;
+  color: white;
+  left: 226px;
+  font-size: 18px;
+  margin-top: 51px;
+}
+
+#sum {
+  position: absolute;
+  color: white;
+  left: 376px;
+  font-size: 18px;
+  margin-top: 51px;
+}
+
+#input1 {
+  margin-top: 54px;
+  border: 1px solid #CFCFCF;
+  height: 16px;
+  padding: 2px;
+  float: none;
+  width: 70px;
+  color: black;
+  left: 421px;
+  position: absolute;
+  background: white;
+}
+
+#record-button {
+  background-color: rgba(162, 166, 65, 1);
+  position: absolute;
+  margin-top: 52px;
+  border: 0 solid black;
+  color: black;
+  cursor: pointer;
+  height: 20px;
+  text-align: center;
+  width: 90px;
+  left: 840px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#input2 {
+  margin-top: 54px;
+  border: 1px solid #CFCFCF;
+  height: 16px;
+  padding: 2px;
+  float: none;
+  width: 70px;
+  color: black;
+  left: 540px;
+  position: absolute;
+  background: white;
+}
+
+#date {
+  position: absolute;
+  color: white;
+  left: 498px;
+  font-size: 18px;
+  margin-top: 51px;
+}
+
+#note {
+  position: absolute;
+  color: white;
+  left: 615px;
+  font-size: 18px;
+  margin-top: 51px;
+}
+
+#input3 {
+  margin-top: 54px;
+  border: 1px solid #CFCFCF;
+  height: 16px;
+  padding: 2px;
+  float: none;
+  width: 120px;
+  color: black;
+  left: 693px;
+  position: absolute;
+  background: white;
+}
+
+#expense-btn {
+    position: absolute;
+    left: 220px;
+    font-size: 26px;
+    margin-top: 80px;
+    
+   }
+   #expenseList {
+    margin-top: 54px;
+    height: 16px;
+    width: 80px;
+    left: 140px;
+    position: absolute;
+    background-color: #fff;
+   }
+  #incomeList {  
+    margin-top: 54px;
+    height: 16px;
+    width: 80px;
+    left: 140px;
+    position: absolute;
+    background-color: #fff;
+  }
+  
+  option {
+    background-color: #fff;
+  }
+
+#moneyList {
+  margin-top: 54px;
+  height: 16px;
+  width: 80px;
+  left: 291px;
+  position: absolute;
+  background-color: #fff;
+}
+/*Контейнер для відображення таблиці записів*/
+.table {
+  left: 45px;  
+  position: absolute;
+  background-color: rgba(162, 166, 65, 1);
+  width: 1000px;
+  height: 275px;
+  margin-top: 65px;
+  overflow: auto;
+}
+.table2 {
+  position: absolute;
+  background-color: rgba(162, 166, 65, 1);
+  width: 1000px;
+  height: 275px;
+}
+#table1 {
+  position: relative;
+  height: 50px; 
+  color: white;
+  background-color: olive ; 
+  width: 100px;
+  max-width: 100px;
+  word-wrap: break-word;
+}
+
+#table2 {
+  position: relative;
+  height: 50px; 
+  color: white;
+  background-color: olive ; 
+  width: 200px;
+  max-width: 200px;
+}
+
+
+/*Сторінка Експорт*/
+
+
+#main-name {
+position: absolute;
+background-color: rgba(118, 110, 100, 1);
+color: white;
+left: 120px;
+font-size: 28px;
+margin-top: 80px; 
+}
+
+/*Контейнера експорту*/
+.excel-conteiner {
+width: 1090px;
+height: 100px;
+background: rgba(42,30,58,1);
+border-radius: 5px;
+position: absolute;
+top: 140px;
+left: 120px;
+}
+ 
+.xml-conteiner {
+width: 1090px;
+height: 100px;
+background: rgba(42,30,58,1);
+border-radius: 5px;
+position: absolute;
+top: 280px;
+left: 120px;
+}
+  
+.csv-conteiner {
+width: 1090px;
+height: 100px;
+background: rgba(42,30,58,1);
+border-radius: 5px;
+position: absolute;
+top: 420px;
+left: 120px;
+}
+
+.import-conteiner {
+width: 1090px;
+height: 100px;
+background: rgba(42,30,58,1);
+border-radius: 5px;
+position: absolute;
+top: 560px;
+left: 120px;
+}
+ 
+#name-conteiner {
+position: absolute;
+color: white;
+left: 60px;
+font-size: 22px;
+margin-top: 20px;
+}
+  
+#period {
+position: absolute;
+color: white;
+left: 60px;
+font-size: 18px;
+margin-top: 50px;
+}
+
+#input1 {
+margin-top: 54px;
+border: 1px solid #CFCFCF;
+height: 16px;
+padding: 2px;
+float: none;
+width: 70px;
+color: black;
+left: 135px;
+position: absolute;
+background: white;
+}
+
+#do {
+position: absolute;
+color: white;
+left: 212px;
+font-size: 18px;
+margin-top: 50px;
+width: 1px;
+}
+  
+#input2 {
+margin-top: 54px;
+border: 1px solid #CFCFCF;
+height: 16px;
+padding: 2px;
+float: none;
+width: 70px;
+color: black;
+left: 240px;
+position: absolute;
+background: white;
+}
+
+#button {
+background-color: rgba(162, 166, 65, 1);
+position: absolute;
+margin-top: 52px;
+border: 0 solid black;
+color: black;
+cursor: pointer;
+height: 20px;
+text-align: center;
+width: 90px;
+left: 320px;
+border-radius: 5px;
+font-size: 16px;
+font-weight: bold;
+}
+  

@@ -12,4 +12,8 @@ urlpatterns = [
         template_name='style.css',
         content_type='text/css')
         ),
+    path('main.css', TemplateView.as_view(
+        template_name='style.css',
+        content_type='text/css')
+         ),
 ]

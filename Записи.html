@@ -7,16 +7,14 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
     
   
-
 <body> 
-<!-- -->
+
     <div class="main-background">
-       
+
+      <div class="top-panel"></div>
+      
         <div class="side-panel">
-             <div class="top-panel"> 
-                MyCASH
-                дата
-             </div>
+           
              <button style="color: yellow;" id="income-btn" >Дохід</button>
              <button style="color: white;" id="expense-btn">Витрата</button>
 
@@ -24,6 +22,9 @@
 
                 <p id="incomeText">Додайте свій дохід</p>
                 <p id="expenseText" style="display: none;">Додайте свою витрату</p>
+                
+                <div class="flex-container2">
+
                 <p id="category">Категорія</p>
 
                 <select id="incomeList">
@@ -34,7 +35,6 @@
                     <option>Інвестиції</option>
                     <option>Інше</option>
                   </select>
-
 
                   <select id="expenseList" style="display: none;">
                     <option>Харчування</option>
@@ -52,7 +52,6 @@
                     <option value="1">Готівка</option>
                     <option value="2">Рахунок в банку</option>
                     <option value="3">Депозит</option>
-                    
                   </select>
 
                   <p id="sum">Сума</p>
@@ -69,6 +68,10 @@
                   <p id="note"> Примітка</p>
                   <input type="text" id="input3"></input>
 
+                  <input type="submit" value="Записати" id="record-button"></input>
+                
+                  </div>
+                  
                   <script>
 
                 const incomeBtn = document.getElementById('income-btn');
@@ -104,17 +107,17 @@
                 expenseTable.style.display = 'block';
                 });
 
-                  </script>
-                
-                <input type="submit" value="Записати" id="record-button"></input>
-
+                  </script>               
+  
              </div>
 
              <div class="reflection">
 
+              <div class="flex-container2">
+
               <p id="incomeText2">Записи доходів</p>
               <p id="expenseText2" style="display: none;">Записи витрат</p>
-
+            
               <p id="month">Місяць</p>
 
               <select id="monthList">
@@ -135,21 +138,23 @@
 
               <p id="year">Рік</p>
 
-              <select id="yearList">
+              <select id="yearList" class="flex-container3">
                 <option value="1">2022</option>
                 <option value="2" selected>2023</option>
                 <option value="3">2024</option>
               </select>
 
-              <p id="on-date">Від</p>
+              <p id="on-date" >Від</p>
               <input id="on-date2" type="date" lang="uk-UA">
 
               <p id="for-date">До</p>
               <input id="for-date2" type="date" lang="uk-UA">
+              
               <input type="submit" value="Застосувати" id="record-button2"></input>
-
+              </div>
                 <div class="table">
-                    <table id="incomeTable">
+                    
+                  <table id="incomeTable">
                         <tr>
                           <th id="table1">Дата</th>
                           <th id="table1">Категорія</th>
@@ -181,11 +186,9 @@
                           <td id="table1">2</td>
                           <td id="table2">2</td>
                           </tr>
-                    </table>   
-                 
+                    </table>                   
         </div> 
     </div>
 </div>
-
 </body>
 </html>

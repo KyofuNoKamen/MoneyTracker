@@ -7,67 +7,76 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
 
 <body> 
-<!-- -->
+
     <div class="main-background">
-       
+      <div class="top-panel"> 
         <div class="side-panel">
-             <div class="top-panel"> 
-                MyCASH
-                дата
+             
              </div>
+
              <p id="main-name">Експорт</p>
 
              <div class="excel-conteiner">
 
                 <p id="name-conteiner">Excel</p>
+
+                <div class="flex-container">
+
                 <p id="period">Період&nbsp;з:</p>
-                <input type="text" value="01.05.2023" id="input-day"></input>
+                <input id="input-day" type="date" lang="uk-UA">
                 <p id="do">до:</p>
-                <input type="text" value="31.05.2023" id="input-day2"></input>
+                <input id="input-day2" type="date" lang="uk-UA">
                 <input type="submit" value="Зберегти" id="button"></input>
 
+               </div>
              </div>
 
              <div class="xml-conteiner">
 
                 <p id="name-conteiner">XML</p>
+
+                <div class="flex-container">
+
                 <p id="period">Період&nbsp;з:</p>
-                <input type="text" value="01.05.2023" id="input-day"></input>
+                <input id="input-day" type="date" lang="uk-UA">
                 <p id="do">до:</p>
-                <input type="text" value="31.05.2023" id="input-day2"></input>
+                <input id="input-day2" type="date" lang="uk-UA">
                 <input type="submit" value="Зберегти" id="button"></input>
 
+               </div>
              </div>
 
              <div class="csv-conteiner">
 
-                <p id="name-conteiner">CSV</p>
+                <p id="name-conteiner">CSV</p>  
+
+                <div class="flex-container">
+
                 <p id="period">Період&nbsp;з:</p>
-                <input type="text" value="01.05.2023" id="input-day"></input>
+                <input id="input-day" type="date" lang="uk-UA">
                 <p id="do">до:</p>
-                <input type="text" value="31.05.2023" id="input-day2"></input>
+                <input id="input-day2" type="date" lang="uk-UA">
                 <input type="submit" value="Зберегти" id="button"></input>
 
+               </div>
              </div>
 
              <div class="import-conteiner">
+
                 <p id="name-conteiner">Імпорт</p>
+
+                <div class="flex-container">
+
                 <form id="period",action="/upload" method="post" enctype="multipart/form-data">
                     <input type="file" name="file"></input>
-               
+
                   </form>
-                <input type="submit" value="Зберегти" id="button"></input>
-             </div>
+                <input type="submit" value="Зберегти" id="button2"></input>
 
-        </div> 
-        
-        
+               </div>
+             </div>    
+        </div>            
     </div>
-
-
 </div>
-<script>
-</script>
-
 </body>
 </html>

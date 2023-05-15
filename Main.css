@@ -1,74 +1,75 @@
 * {
   font-family: 'Montserrat';
   box-sizing: border-box;
-  margin-top: 0;
-  margin-bottom: 0;
-  background: rgba(42,30,58,1);
 }
+
 body {
   font-size: 14px;
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  background-color: #3F3D3F;
 }
 
 /*контейнер фону*/
 .main-background {
-
+height: 100%;
 width: 100%;
-max-width: 1280px;
-height: 720px;
 margin: 0 auto;
-background-color: rgba(118, 110, 100, 1);
+background-color: #3F3D3F;
 }
 
 /*контейнер бокової панелі*/
+
 .side-panel {
-  width: 48px;
-  height: 720px;
-  background-color: rgba(162, 166, 65, 1);
-  position: absolute;
+width: 48px;
+height: 100vh;
+background-color: #D3D1EB;
+position: absolute; 
 }
 
 /*Контейнер верхньої панелі*/
 .top-panel {
-  width: 1280px;
-  height: 50px;
-  background: #3b444d; 
-  position: absolute;
+width:100%;
+height: 50px;
+background-color: #5C5A5C;
+position: absolute;
 }
 
 /*Головна сторінка*/
 
 /*контейнер доходів за місяць*/
 .income-panel {
-  width: 384px;
-  height: 512px;
-  background: rgba(42,30,58,1);
-  border-radius: 5px;
-  position: absolute;
-  top: 66px;
-  left: 64px;
-
+width: 384px;
+height: 512px;
+background: rgba(42,30,58,1);
+border-radius: 5px;
+position: absolute;
+top: 66px;
+left: 64px;
 }
 
 /*контейнер витрат за місяць*/ 
 .expenses-panel {
-  width: 384px;
-  height: 512px;
-  background: rgba(42,30,58,1);
-  border-radius: 5px;
-  position: absolute;
-  top: 66px;
-  left: 472px;
+width: 384px;
+height: 512px;
+background: rgba(42,30,58,1);
+border-radius: 5px;
+position: absolute;
+top: 66px;
+left: 472px;
 }
 
 /*контейнер курсу валют*/
 .currency-panel {
-  background: rgba(42,30,58,1);
-  position: absolute;
-  height: 112px;
-  width: 792px;
-  left: 64px;
-  top: 592px;
-  border-radius: 5px;
+background: rgba(42,30,58,1);
+position: absolute;
+height: 112px;
+width: 792px;
+left: 64px;
+top: 592px;
+border-radius: 5px;
 }
 
 /*заощадження*/
@@ -102,8 +103,8 @@ color: white;
 }
 
 #currency2 {
-  position: relative;
-  color: white;
+position: relative;
+color: white;
 }
 
 /*4 контейнера відображення курсу валют*/
@@ -247,381 +248,394 @@ width: 180px;
 
 
 
+
+
+
 /*Сторінка Записи*/
+
+.flex-container2 {
+position: absolute;
+left: 60px;
+display: flex;
+justify-content: space-between;
+}
+
+.flex-container2 > * {
+margin-right: 10px;
+}
+
+.flex-container3 {
+margin-right: 80px;
+}
+
 #income-btn {
 position: absolute;
-left: 120px;
+left: 35vh;
 font-size: 26px;
 margin-top: 80px; 
+background-color: #1C1D1D;
+cursor: pointer;
 }
 
 /*Контейнер для додавання записів*/
 .addition {
 width: 1090px;
 height: 100px;
-background: rgba(42,30,58,1);
+background-color: #1C1D1D;
 border-radius: 5px;
 position: absolute;
 top: 140px;
-left: 120px;
+left: 34vh;
 }
 
 /*Контейнер для відображення записів*/
 .reflection {
 width: 1090px;
 height: 380px;
-background: rgba(42,30,58,1);
+background-color: #1C1D1D;
 border-radius: 5px;
 position: absolute;
 top: 280px;
-left: 120px;
+left: 34vh;
 }
 
 #incomeText {
-  position: absolute;
-  color: white;
-  left: 60px;
-  font-size: 22px;
-  margin-top: 20px; 
+position: absolute;
+color: white;
+left: 60px;
+font-size: 22px;
+margin-top: 20px; 
 }
 
 #incomeText2 {
-  position: absolute;
-  color: white;
-  left: 60px;
-  font-size: 22px;
-  margin-top: 20px; 
+position: relative;
+color: white;
+width: 160px;
+font-size: 22px;
+margin-top: 20px;
 }
 
 #expenseText {
-  position: absolute;
-  color: white;
-  left: 60px;
-  font-size: 22px;
-  margin-top: 20px; 
+position: absolute;
+color: white;
+left: 60px;
+font-size: 22px;
+margin-top: 20px; 
 }
 
 #expenseText2 {
-  position: absolute;
-  color: white;
-  left: 60px;
-  font-size: 22px;
-  margin-top: 20px; 
+position: relative;
+color: white;
+width: 160px;
+font-size: 22px;
+margin-top: 20px; 
 }
 
 #category {
-  position: absolute;
-  color: white;
-  left: 60px;
-  font-size: 18px;
-  margin-top: 50px;
+position: relative;
+color: white;
+font-size: 18px;
+margin-top: 50px;
 }
 
 #version {
-  position: absolute;
-  color: white;
-  left: 226px;
-  font-size: 18px;
-  margin-top: 51px;
+position: relative;
+color: white;
+font-size: 18px;
+margin-top: 51px;
 }
 
 #sum {
-  position: absolute;
-  color: white;
-  left: 376px;
-  font-size: 18px;
-  margin-top: 51px;
+position: relative;
+color: white;
+font-size: 18px;
+margin-top: 51px;
 }
 
 #input1 {
-  margin-top: 54px;
-  border: 1px solid #CFCFCF;
-  height: 16px;
-  padding: 2px;
-  float: none;
-  width: 70px;
-  color: black;
-  left: 421px;
-  position: absolute;
-  background: white;
+margin-top: 54px;
+border: 1px solid #CFCFCF;
+height: 16px;
+padding: 2px;
+float: none;
+width: 70px;
+color: black;
+position: relative;
+background: white;
 }
 
 #record-button {
-  background-color: rgba(162, 166, 65, 1);
-  position: absolute;
-  margin-top: 52px;
-  border: 0 solid black;
-  color: black;
-  cursor: pointer;
-  height: 20px;
-  text-align: center;
-  width: 90px;
-  left: 840px;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
+background-color: rgba(162, 166, 65, 1);
+margin-top: 52px;
+border: 0 solid black;
+color: black;
+cursor: pointer;
+height: 20px;
+text-align: center;
+width: 90px;
+left: 840px;
+border-radius: 5px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
 }
 
 #input2 {
-  margin-top: 54px;
-  border: 1px solid #CFCFCF;
-  height: 16px;
-  padding: 2px;
-  float: none;
-  width: 90px;
-  color: black;
-  left: 540px;
-  position: absolute;
-  background: white;
-  font-size: 14px;
+margin-top: 54px;
+border: 1px solid #CFCFCF;
+height: 16px;
+padding: 2px;
+float: none;
+width: 90px;
+color: black;
+position: relative;
+background: white;
+font-size: 14px;
 }
 
 #date {
-  position: absolute;
-  color: white;
-  left: 498px;
-  font-size: 18px;
-  margin-top: 51px;
+position: relative;
+color: white;
+font-size: 18px;
+margin-top: 51px;
 }
 
 #note {
-  position: absolute;
-  color: white;
-  left: 636px;
-  font-size: 18px;
-  margin-top: 51px;
+position: relative;
+color: white;
+font-size: 18px;
+margin-top: 51px;
 }
 
 #input3 {
-  margin-top: 54px;
-  border: 1px solid #CFCFCF;
-  height: 16px;
-  padding: 2px;
-  float: none;
-  width: 120px;
-  color: black;
-  left: 715px;
-  position: absolute;
-  background: white;
+margin-top: 54px;
+border: 1px solid #CFCFCF;
+height: 16px;
+padding: 2px;
+float: none;
+width: 120px;
+color: black;
+position: relative;
+background: white;
 }
 
 #expense-btn {
-    position: absolute;
-    left: 220px;
-    font-size: 26px;
-    margin-top: 80px;
-    
-   }
-   #expenseList {
-    margin-top: 52px;
-    height: 18px;
-    width: 80px;
-    left: 140px;
-    position: absolute;
-    background-color: #fff;
- 
-   }
-  #incomeList {  
-    margin-top: 52px;
-    height: 18px;
-    width: 80px;
-    left: 140px;
-    position: absolute;
-    background-color: #fff;
- 
-  }
+position: absolute;
+left: 49vh;
+font-size: 26px;
+margin-top: 80px;
+background-color: #1C1D1D;
+cursor: pointer;
+}
+
+#expenseList {
+margin-top: 52px;
+height: 18px;
+width: 80px;
+position: relative;
+background-color: #fff;
+}
+
+#incomeList {  
+margin-top: 52px;
+height: 18px;
+width: 80px;
+position: relative;
+background-color: #fff;
+}
   
-  option {
-    background-color: #fff;
-  }
+option {
+background-color: #fff;
+}
 
 #moneyList {
-  margin-top: 52px;
-  height: 18px;
-  width: 80px;
-  left: 291px;
-  position: absolute;
-  background-color: #fff;
+margin-top: 52px;
+height: 18px;
+width: 80px;
+position: relative;
+background-color: #fff;
 }
 
 #month {
-  position: absolute;
-  color: white;
-  left: 230px;
-  font-size: 18px;
-  margin-top: 24px;
+position: relative;
+color: white;
+font-size: 18px;
+margin-top: 24px;
 }
 
 #monthList {
-  margin-top: 25px;
-  height: 18px;
-  width: 80px;
-  left: 290px;
-  position: absolute;
-  background-color: #fff;
+margin-top: 25px;
+height: 18px;
+width: 80px;
+position: relative;
+background-color: #fff;
 }
 
 #year {
-  position: absolute;
-  color: white;
-  left: 376px;
-  font-size: 18px;
-  margin-top: 24px;
+position: relative;
+color: white;
+font-size: 18px;
+margin-top: 24px;
 }
 
 #yearList {
-  margin-top: 25px;
-  height: 18px;
-  width: 80px;
-  left: 405px;
-  position: absolute;
-  background-color: #fff;
+margin-top: 25px;
+height: 18px;
+width: 80px;
+position: relative;
+background-color: #fff;
 }
 
 #on-date {
-  position: absolute;
-  color: white;
-  left: 540px;
-  font-size: 18px;
-  margin-top: 24px;
+position: relative;
+color: white;
+font-size: 18px;
+margin-top: 24px;
 }
 
 #on-date2 {
-  position: absolute;
-  color: white;
-  left: 575px;
-  font-size: 16px;
-  margin-top: 26px;
-  border: 1px solid #CFCFCF;
-  height: 16px;
-  
-  float: none;
-  width: 105px;
-  color: black;
-  background: white;
+position: relative;
+color: white;
+font-size: 16px;
+margin-top: 26px;
+border: 1px solid #CFCFCF;
+height: 16px;
+float: none;
+width: 105px;
+color: black;
+background: white;
 }
 
 #for-date {
-  position: absolute;
-  color: white;
-  left: 690px;
-  font-size: 18px;
-  margin-top: 24px;
+position: relative;
+color: white;
+font-size: 18px;
+margin-top: 24px;
 }
 
 #for-date2 {
-  position: absolute;
-  color: white;
-  left: 720px;
-  font-size: 16px;
-  margin-top: 26px;
-  border: 1px solid #CFCFCF;
-  height: 16px;
-  float: none;
-  width: 105px;
-  color: black;
-  background: white;
+position: relative;
+color: white;
+font-size: 16px;
+margin-top: 26px;
+border: 1px solid #CFCFCF;
+height: 16px;
+float: none;
+width: 105px;
+color: black;
+background: white;
 }
 
 #record-button2 {
-  background-color: rgba(162, 166, 65, 1);
-  position: absolute;
-  margin-top: 24px;
-  border: 0 solid black;
-  color: black;
-  cursor: pointer;
-  height: 20px;
-  text-align: center;
-  width: 100px;
-  left: 840px;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
+background-color: rgba(162, 166, 65, 1);
+position: relative;
+margin-top: 24px;
+border: 0 solid black;
+color: black;
+cursor: pointer;
+height: 20px;
+text-align: center;
+width: 100px;
+border-radius: 5px;
+font-size: 16px;
+font-weight: bold;
 }
 
 /*Контейнер для відображення таблиці записів*/
 .table {
-  left: 45px;  
-  position: absolute;
-  background-color: rgba(162, 166, 65, 1);
-  width: 1000px;
-  height: 275px;
-  margin-top: 65px;
-  overflow: auto;
+left: 45px;  
+position: absolute;
+background-color: rgba(162, 166, 65, 1);
+width: 1000px;
+height: 275px;
+margin-top: 65px;
+overflow: auto;
 }
 
 #table1 {
-  position: relative;
-  height: 50px; 
-  color: white;
-  background-color: olive ; 
-  width: 150px;
-  max-width: 150px;
-  word-wrap: break-word;
+position: relative;
+height: 50px; 
+color: white;
+background-color: olive ; 
+width: 150px;
+max-width: 150px;
+word-wrap: break-word;
 }
 
 #table2 {
-  position: relative;
-  height: 50px; 
-  color: white;
-  background-color: olive ; 
-  width: 400px;
-  max-width: 400px;
-  word-wrap: break-word;
+position: relative;
+height: 50px; 
+color: white;
+background-color: olive ; 
+width: 400px;
+max-width: 400px;
+word-wrap: break-word;
 }
+
+
 
 
 /*Сторінка Експорт*/
 
-
 #main-name {
 position: absolute;
-background-color: rgba(118, 110, 100, 1);
+background-color: #3F3D3F;
 color: white;
-left: 120px;
+left: 34vh;
 font-size: 28px;
 margin-top: 80px; 
 }
 
 /*Контейнера експорту*/
 .excel-conteiner {
-width: 1090px;
+width: 1100px;
 height: 100px;
-background: rgba(42,30,58,1);
+background-color: #1C1D1D;
 border-radius: 5px;
 position: absolute;
 top: 140px;
-left: 120px;
+left: 33vh;
 }
- 
+
+.flex-container {
+position: absolute;
+left: 60px;
+display: flex;
+justify-content: space-between;
+}
+
+.flex-container > * {
+margin-right: 10px;
+}
+
 .xml-conteiner {
-width: 1090px;
+width: 1100px;
 height: 100px;
-background: rgba(42,30,58,1);
+background-color: #1C1D1D;
 border-radius: 5px;
 position: absolute;
 top: 280px;
-left: 120px;
+left: 33vh;
 }
   
 .csv-conteiner {
-width: 1090px;
+width: 1100px;
 height: 100px;
-background: rgba(42,30,58,1);
+background-color: #1C1D1D;
 border-radius: 5px;
 position: absolute;
 top: 420px;
-left: 120px;
+left: 33vh;
 }
 
 .import-conteiner {
-width: 1090px;
+width: 1100px;
 height: 100px;
-background: rgba(42,30,58,1);
+background-color: #1C1D1D;
 border-radius: 5px;
 position: absolute;
 top: 560px;
-left: 120px;
+left: 33vh; 
 }
  
 #name-conteiner {
@@ -630,14 +644,16 @@ color: white;
 left: 60px;
 font-size: 22px;
 margin-top: 20px;
+background-color: #1C1D1D;
 }
   
 #period {
-position: absolute;
+position: relative;
 color: white;
-left: 60px;
+width: 66px;
 font-size: 18px;
 margin-top: 50px;
+background-color: #1C1D1D;
 }
 
 #input-day {
@@ -646,20 +662,18 @@ border: 1px solid #CFCFCF;
 height: 16px;
 padding: 2px;
 float: none;
-width: 70px;
+width: 95px;
 color: black;
-left: 135px;
-position: absolute;
+position: relative;
 background: white;
 }
 
 #do {
-position: absolute;
+position: relative;
 color: white;
-left: 212px;
 font-size: 18px;
 margin-top: 50px;
-width: 1px;
+width: 22px;
 }
   
 #input-day2 {
@@ -668,16 +682,15 @@ border: 1px solid #CFCFCF;
 height: 16px;
 padding: 2px;
 float: none;
-width: 70px;
+width: 95px;
 color: black;
-left: 240px;
-position: absolute;
+position: relative;
 background: white;
 }
 
 #button {
 background-color: rgba(162, 166, 65, 1);
-position: absolute;
+position: relative;
 margin-top: 52px;
 border: 0 solid black;
 color: black;
@@ -685,9 +698,23 @@ cursor: pointer;
 height: 20px;
 text-align: center;
 width: 90px;
-left: 320px;
 border-radius: 5px;
 font-size: 16px;
 font-weight: bold;
 }
-  
+
+#button2 {
+background-color: rgba(162, 166, 65, 1);
+position: relative;
+margin-top: 52px;
+border: 0 solid black;
+color: black;
+cursor: pointer;
+height: 20px;
+text-align: center;
+width: 90px;
+left: 240px;
+border-radius: 5px;
+font-size: 16px;
+font-weight: bold;
+}

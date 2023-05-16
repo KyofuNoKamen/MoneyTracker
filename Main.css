@@ -718,3 +718,206 @@ border-radius: 5px;
 font-size: 16px;
 font-weight: bold;
 }
+
+
+
+/*Цілі*/
+
+.flex-container4 {
+margin-top: 60px;
+position: absolute;
+left: 60px;
+display: flex;
+justify-content: space-between;
+height: 20px;
+}
+
+.flex-container4 > * {
+margin-right: 10px;
+}
+
+.flex-container5 {
+height: 20px;
+margin-top: 100px;
+position: absolute;
+left: 60px;
+display: flex;
+justify-content: space-between;
+}
+    
+.flex-container5 > * {
+margin-right: 10px;
+}
+
+.flex-container6 {
+height: 20px;
+margin-top: 140px;
+position: absolute;
+left: 60px;
+display: flex;
+justify-content: space-between;
+}
+      
+.flex-container6 > * {
+margin-right: 10px;
+}
+
+.flex-container6-2 {
+margin-right: 100px;
+}
+
+.input-target-conteiner {
+width: 500px;
+height: 200px;
+background-color: #1C1D1D;
+border-radius: 5px;
+position: absolute;
+top: 140px;
+left: 33vh;
+}
+
+.target-name {
+position: relative;
+color: white;
+margin-top: -3px;
+font-size: 18px;
+background-color: #1C1D1D;
+}
+
+.target-name2 {
+position: relative;
+color: white;
+margin-top: -3px;
+font-size: 18px;
+background-color: #1C1D1D;
+}
+
+#input-target-name {
+border: 1px solid #CFCFCF;
+height: 16px;
+padding: 2px; 
+float: none;
+width: 110px;
+color: black;
+position: relative;
+background: white;
+}
+
+#input-target-sum {
+border: 1px solid #CFCFCF;
+height: 16px;
+padding: 2px; 
+float: none;
+width: 110px;
+color: black;
+position: relative;
+background: white;
+}
+
+#input-target-sum2 {
+border: 1px solid #CFCFCF;
+height: 16px;
+padding: 2px; 
+float: none;
+width: 110px;
+color: black;
+position: relative;
+background: white;
+}
+
+.input-day3 {
+border: 1px solid #CFCFCF;
+height: 16px;
+padding: 2px;
+float: none;
+width: 95px;
+color: black;
+position: relative;
+background: white;
+}
+
+.sum2 {
+position: relative;
+color: white;
+font-size: 18px;
+margin-top: -3px;
+}
+
+.end-date{
+position: relative;
+color: white;
+font-size: 18px;
+margin-top: -3px;
+}
+
+.addition-money-target-conteiner {
+width: 500px;
+height: 200px;
+background-color: #1C1D1D;
+border-radius: 5px;
+position: absolute;
+top: 380px;
+left: 33vh;
+}
+
+#addition-button {
+background-color: rgba(162, 166, 65, 1);
+position: relative;
+margin-top: 135px;
+left: 314px;
+border: 0 solid black;
+color: black;
+cursor: pointer;
+height: 20px;
+text-align: center;
+width: 90px;
+border-radius: 5px;
+font-size: 16px;
+font-weight: bold;
+}
+
+#record-button2 {
+background-color: rgba(162, 166, 65, 1);
+position: relative;
+margin-top: -1px;
+border: 0 solid black;
+color: black;
+cursor: pointer;
+height: 20px;
+text-align: center;
+width: 90px;
+border-radius: 5px;
+font-size: 16px;
+font-weight: bold;
+}
+
+#version2 {
+position: relative;
+color: white;
+font-size: 18px;
+margin-top: -3px;
+}
+  
+#moneyList2 { 
+height: 18px;
+width: 80px;
+position: relative;
+background-color: #fff;
+}
+
+#target-list {
+height: 18px;
+width: 110px;
+position: relative;
+background-color: #fff;
+}
+
+.target-list-conteiner {
+width: 500px;
+height: 440px;
+background-color: #1C1D1D;
+border-radius: 5px;
+position: absolute;
+top: 140px;
+left: 115vh;
+}

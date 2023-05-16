@@ -25,7 +25,7 @@
                 
                 <div class="flex-container2">
 
-                <p id="category">Категорія</p>
+                <p id="category">Категорія:</p>
 
                 <select id="incomeList">
                     <option value="1"selected>Зарплата</option>
@@ -46,7 +46,7 @@
                     <option>Інше</option>
                   </select>
 
-                  <p id="version">Варіант</p>
+                  <p id="version">Варіант:</p>
 
                   <select id="moneyList">
                     <option value="1">Готівка</option>
@@ -54,10 +54,10 @@
                     <option value="3">Депозит</option>
                   </select>
 
-                  <p id="sum">Сума</p>
-                  <input type="text" id="input1"></input>
+                  <p id="sum">Сума:</p>
+                  <input type="number" id="input1"></input>
 
-                  <p id="date"> Дата</p>
+                  <p id="date"> Дата:</p>
                   <input id="input2" type="date" lang="uk-UA">
 
                   <script>
@@ -65,7 +65,7 @@
                     document.getElementById("input2").value = today; // устанавливаем значение поля ввода на сегодняшнюю дату
                   </script>
 
-                  <p id="note"> Примітка</p>
+                  <p id="note"> Примітка:</p>
                   <input type="text" id="input3"></input>
 
                   <input type="submit" value="Записати" id="record-button"></input>
@@ -118,7 +118,7 @@
               <p id="incomeText2">Записи доходів</p>
               <p id="expenseText2" style="display: none;">Записи витрат</p>
             
-              <p id="month">Місяць</p>
+              <p id="month">Місяць:</p>
 
               <select id="monthList">
                 <option value="1">Січень</option>
@@ -136,7 +136,7 @@
                 <option value="13">Весь рік</option>
               </select>
 
-              <p id="year">Рік</p>
+              <p id="year">Рік:</p>
 
               <select id="yearList" class="flex-container3">
                 <option value="1">2022</option>
@@ -144,10 +144,10 @@
                 <option value="3">2024</option>
               </select>
 
-              <p id="on-date" >Від</p>
+              <p id="on-date" >Від:</p>
               <input id="on-date2" type="date" lang="uk-UA">
 
-              <p id="for-date">До</p>
+              <p id="for-date">До:</p>
               <input id="for-date2" type="date" lang="uk-UA">
               
               <input type="submit" value="Застосувати" id="record-button2"></input>

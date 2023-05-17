@@ -913,11 +913,35 @@ background-color: #fff;
 }
 
 .target-list-conteiner {
-width: 500px;
+width: 700px;
 height: 440px;
 background-color: #1C1D1D;
 border-radius: 5px;
 position: absolute;
 top: 140px;
-left: 115vh;
+left: 105vh;
 }
+
+.target-name3 {
+  width: 60px;
+  left: 60px;
+  position: relative;
+  color: white;
+  margin-top: 60px;
+  font-size: 18px;
+  background-color: #1C1D1D;
+  }
+
+  .target-table-conteiner {
+    left: 30px;  
+    position: absolute;
+    background-color: rgba(162, 166, 65, 1);
+    width: 640px;
+    height: 350px;
+    margin-top: 60px;
+    overflow: auto;
+  }
+
+  .target-table {
+
+  }

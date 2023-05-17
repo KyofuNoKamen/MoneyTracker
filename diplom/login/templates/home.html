@@ -7,6 +7,89 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
 <script src="{% static 'script.js' %}"></script>
 
+<script>
+        $(document).ready(function() {
+            var ctx = $("#chart-line-income");
+            var myLineChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        {% for income in incomes %}
+                            '{{ income.category }}',
+                        {% endfor %}
+                    ],
+                    datasets: [{
+                        data: [
+                            {% for income in incomes %}
+                                {{ income.amount }},
+                            {% endfor %}
+                        ],
+                        backgroundColor: [
+                            {% for i in incomes   %}
+                                "rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)",
+                            {% endfor %}
+                        ]
+                    }]
+                },
+                options: {
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            var ctx = $("#chart-line-spending");
+            var myLineChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        {% for spending in spends %}
+                            '{{ spending.category }}',
+                        {% endfor %}
+                    ],
+                    datasets: [{
+                        data: [
+                            {% for spending in spends %}
+                                {{ spending.amount }},
+                            {% endfor %}
+                        ],
+                        backgroundColor: [
+                            {% for i in spends   %}
+                                "rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)",
+                            {% endfor %}
+                        ]
+                    }]
+                },
+                options: {
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            var ctx = $("#chart-line-spending-today");
+            var xValues = ["02:00", "04:00", "06:00", "08:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00", "22:00", "24:00"];
+            var yValues = [0, 0, 0, 0, 0, 100, 500, 30, 250, 1000, 0];
+            var barColors = ["rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)", "rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)", "rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)"];
+
+            var myLineChart = new Chart(ctx, {
+              type: "bar",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  backgroundColor: barColors,
+                  data: yValues
+                }]
+              },
+              options: {
+                legend: {
+                    display: false
+                }
+              }
+            });
+        });
+
+
+</script>
+
 <div class="flex-col-container main-panel">
     <div class="flex-col-container header-container">
         <nav class="navbar navbar-expand-lg navbar-light col-12">
@@ -110,9 +193,13 @@
                 </div>
             </div>
 
-            <div class="flex-col-container right-main-content" style="justify-content:space-between; margin: 5px;">
+            <div class="flex-col-container right-main-content" style="justify-content:space-between; margin:5px;">
                 <div class="jumbotron" style="height:45vh">
                     <h2 class="display-5 text-center">Заощадження</h2>
+                    <p class="lead">Рахунки в банку:   0 грн.</p>
+                    <p class="lead">Готівка:   0 грн.</p>
+                    <p class="lead">Депозити:   0 грн.</p>
+                    <p class="lead font-weight-bold">Всього:   0 грн.</p>
 
                 </div>
                 <div class="jumbotron" style="height:45vh;">

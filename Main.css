@@ -528,8 +528,8 @@ background: white;
 
 #record-button2 {
 background-color: rgba(162, 166, 65, 1);
-position: relative;
 margin-top: 24px;
+position: relative;
 border: 0 solid black;
 color: black;
 cursor: pointer;
@@ -578,7 +578,7 @@ word-wrap: break-word;
 /*Сторінка Експорт*/
 
 #main-name {
-position: absolute;
+position: relative;
 background-color: #3F3D3F;
 color: white;
 left: 34vh;
@@ -592,16 +592,16 @@ width: 1100px;
 height: 100px;
 background-color: #1C1D1D;
 border-radius: 5px;
-position: absolute;
-top: 140px;
+position: relative;
 left: 33vh;
 }
 
 .flex-container {
-position: absolute;
+position: relative;
 left: 60px;
 display: flex;
-justify-content: space-between;
+height: 20px;
+top: 10px;
 }
 
 .flex-container > * {
@@ -613,8 +613,8 @@ width: 1100px;
 height: 100px;
 background-color: #1C1D1D;
 border-radius: 5px;
-position: absolute;
-top: 280px;
+position: relative;
+top: 20px;
 left: 33vh;
 }
   
@@ -623,8 +623,8 @@ width: 1100px;
 height: 100px;
 background-color: #1C1D1D;
 border-radius: 5px;
-position: absolute;
-top: 420px;
+position: relative;
+top: 40px;
 left: 33vh;
 }
 
@@ -633,18 +633,19 @@ width: 1100px;
 height: 100px;
 background-color: #1C1D1D;
 border-radius: 5px;
-position: absolute;
-top: 560px;
+position: relative;
+top: 60px;
 left: 33vh; 
 }
  
 #name-conteiner {
-position: absolute;
+position: relative;
 color: white;
 left: 60px;
 font-size: 22px;
-margin-top: 20px;
+top: 20px;
 background-color: #1C1D1D;
+width: 60px;
 }
   
 #period {
@@ -652,12 +653,12 @@ position: relative;
 color: white;
 width: 66px;
 font-size: 18px;
-margin-top: 50px;
+margin-top: -3px;
 background-color: #1C1D1D;
 }
 
 #input-day {
-margin-top: 54px;
+
 border: 1px solid #CFCFCF;
 height: 16px;
 padding: 2px;
@@ -672,12 +673,12 @@ background: white;
 position: relative;
 color: white;
 font-size: 18px;
-margin-top: 50px;
+margin-top: -3px;
 width: 22px;
 }
   
 #input-day2 {
-margin-top: 54px;
+
 border: 1px solid #CFCFCF;
 height: 16px;
 padding: 2px;
@@ -691,7 +692,6 @@ background: white;
 #button {
 background-color: rgba(162, 166, 65, 1);
 position: relative;
-margin-top: 52px;
 border: 0 solid black;
 color: black;
 cursor: pointer;
@@ -701,12 +701,13 @@ width: 90px;
 border-radius: 5px;
 font-size: 16px;
 font-weight: bold;
+margin-top: -2px;
 }
 
 #button2 {
 background-color: rgba(162, 166, 65, 1);
 position: relative;
-margin-top: 52px;
+margin-top: -3px;
 border: 0 solid black;
 color: black;
 cursor: pointer;
@@ -724,11 +725,10 @@ font-weight: bold;
 /*Цілі*/
 
 .flex-container4 {
-margin-top: 60px;
-position: absolute;
+top: 20px;
+position: relative;
 left: 60px;
 display: flex;
-justify-content: space-between;
 height: 20px;
 }
 
@@ -738,11 +738,11 @@ margin-right: 10px;
 
 .flex-container5 {
 height: 20px;
-margin-top: 100px;
-position: absolute;
+top: 40px;
+position: relative;
 left: 60px;
 display: flex;
-justify-content: space-between;
+
 }
     
 .flex-container5 > * {
@@ -751,11 +751,11 @@ margin-right: 10px;
 
 .flex-container6 {
 height: 20px;
-margin-top: 140px;
-position: absolute;
+top: 60px;
+position: relative;
 left: 60px;
 display: flex;
-justify-content: space-between;
+
 }
       
 .flex-container6 > * {
@@ -766,13 +766,71 @@ margin-right: 10px;
 margin-right: 100px;
 }
 
+.flex-container9 {
+position: relative;
+left: 60px;
+display: flex;
+height: 20px;
+}
+
+.flex-container9 > * {
+margin-right: 10px;
+}
+
+.flex-container10 {
+height: 20px;
+top: 20px;
+position: relative;
+left: 60px;
+display: flex;
+ }
+        
+.flex-container10 > * {
+margin-right: 10px;
+}
+  
+.flex-container11 {
+height: 20px;
+top: 40px;
+position: relative;
+left: 60px;
+display: flex;
+}
+            
+.flex-container11 > * {
+margin-right: 10px;
+}
+      
+.flex-container11-2 {
+margin-right: 100px;
+}
+
+#name-conteiner2 {
+position: relative;
+color: white;
+left: 60px;
+font-size: 22px;
+top: 20px;
+background-color: #1C1D1D;
+width: 140px;
+}
+
+#name-conteiner3 {
+position: relative;
+color: white;
+left: 60px;
+font-size: 22px;
+background-color: #1C1D1D;
+width: 140px;
+}
+
 .input-target-conteiner {
 width: 500px;
 height: 200px;
 background-color: #1C1D1D;
 border-radius: 5px;
-position: absolute;
-top: 140px;
+position: relative;
+
 left: 33vh;
 }
 
@@ -863,7 +921,7 @@ left: 33vh;
 #addition-button {
 background-color: rgba(162, 166, 65, 1);
 position: relative;
-margin-top: 135px;
+top: 60px;
 left: 314px;
 border: 0 solid black;
 color: black;
@@ -876,7 +934,7 @@ font-size: 16px;
 font-weight: bold;
 }
 
-#record-button2 {
+#record-button3 {
 background-color: rgba(162, 166, 65, 1);
 position: relative;
 margin-top: -1px;
@@ -917,31 +975,161 @@ width: 700px;
 height: 440px;
 background-color: #1C1D1D;
 border-radius: 5px;
-position: absolute;
-top: 140px;
+position: relative;
+top: -221px;
 left: 105vh;
 }
 
 .target-name3 {
-  width: 60px;
-  left: 60px;
-  position: relative;
-  color: white;
-  margin-top: 60px;
-  font-size: 18px;
-  background-color: #1C1D1D;
-  }
+width: 60px;
+left: 60px;
+position: relative;
+color: white;
+margin-top: 60px;
+font-size: 18px;
+background-color: #1C1D1D;
+}
 
-  .target-table-conteiner {
-    left: 30px;  
-    position: absolute;
-    background-color: rgba(162, 166, 65, 1);
-    width: 640px;
-    height: 350px;
-    margin-top: 60px;
-    overflow: auto;
-  }
+.target-table-conteiner {
+left: 30px;  
+top: 15px;
+position: relative;
+background-color: rgba(162, 166, 65, 1);
+width: 640px;
+height: 350px;
+overflow: auto;
+}
 
-  .target-table {
+#target-table1 {
+position: relative;
+height: 50px; 
+color: white;
+background-color: olive ; 
+width: 150px;
+max-width: 150px;
+word-wrap: break-word;
+}
+    
+#target-table2 {
+position: relative;
+height: 50px; 
+color: white;
+background-color: olive ; 
+width: 400px;
+max-width: 400px;
+word-wrap: break-word;
+}
 
-  }
+
+
+/*Аналіз витрат та доходів*/
+
+.flex-container7 {
+top: 10px;
+position: relative;
+left: 60px;
+display: flex;
+justify-content: space-between;
+width: 980px;
+height: 50px;
+}
+
+.flex-container7 > * {
+margin-right: 10px;
+}
+
+.flex-container7-2 {
+margin-right: 80px;
+
+}
+.flex-container8 {
+top: 100px;
+position: relative;
+left: 36vh;
+display: flex;
+width: 240px;
+}
+
+.analysis-conteiner {
+width: 1100px;
+height: 500px;
+margin-top: 130px;
+background-color: #1C1D1D;
+border-radius: 5px;
+position: relative;
+left: 33vh;
+}
+
+#analysis_income_text {
+position: relative;
+color: white;
+width: 160px;
+font-size: 22px;
+margin-top: 20px;
+}
+
+#analysis_expense_text {
+position: relative;
+color: white;
+width: 160px;
+font-size: 22px;
+margin-top: 20px; 
+}
+
+#analysis_income_btn {
+position: relative;
+
+font-size: 26px;  
+background-color: #1C1D1D;
+cursor: pointer;
+}
+
+#analysis_expense_btn {
+position: relative;
+left: 3vh;
+font-size: 26px;
+background-color: #1C1D1D;
+cursor: pointer;
+}
+
+.analysis-button {
+background-color: rgba(162, 166, 65, 1);
+margin-top: 23px; 
+border: 0 solid black;
+color: black;
+cursor: pointer;
+height: 20px;
+text-align: center;
+width: 100px;
+border-radius: 5px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+}
+
+#analysis_income_conteiner {
+left: 40px;  
+position: relative;
+background-color: green;
+width: 1020px;
+height: 340px;
+margin-top: 35px;
+}
+
+#analysis_expense_conteiner {
+left: 40px;  
+position: relative;
+background-color: red;
+width: 1020px;
+height: 340px;
+margin-top: 35px;
+}
+
+#in-all {
+position: relative;
+color: white;
+width: 160px;
+font-size: 22px;
+margin-top: 20px;
+left: 100vh;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ua"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Аналіз</title>
+    <link rel="stylesheet" href="Main.css" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
+    
+  
+<body> 
+
+    <div class="main-background">
+
+      <div class="top-panel"></div>
+      
+        <div class="side-panel">
+
+                <div class="flex-container8">
+                <button style="color: yellow;" id="analysis_income_btn" >Доходи</button>
+                 <button style="color: white;" id="analysis_expense_btn">Витрати</button>
+                </div>
+
+                <script>
+
+                const analysis_incomeBtn = document.getElementById('analysis_income_btn');
+                const analysis_expenseBtn = document.getElementById('analysis_expense_btn');
+
+                // обробник кліку на кнопку доходів
+                analysis_incomeBtn.addEventListener('click', function() {
+                // ховаємо форму витрат і показуємо форму доходів
+               
+                analysis_incomeBtn.style.color = 'yellow';
+                analysis_expenseBtn.style.color = 'white';
+    
+                analysis_income_text.style.display = 'block';
+                analysis_expense_text.style.display = 'none';
+
+                analysis_income_conteiner.style.display = 'block';
+                analysis_expense_conteiner.style.display = 'none';
+                });
+
+                // обробник кліку на кнопку витрат
+                analysis_expenseBtn.addEventListener('click', function() {
+                // ховаємо форму доходів і показуємо форму витрат
+         
+                analysis_incomeBtn.style.color = 'white';
+                analysis_expenseBtn.style.color = 'yellow';
+          
+                analysis_income_text.style.display = 'none';
+                analysis_expense_text.style.display = 'block';
+
+                analysis_income_conteiner.style.display = 'none';
+                analysis_expense_conteiner.style.display = 'block';
+                });
+
+                  </script>               
+  
+          
+
+                <div class="analysis-conteiner">
+
+                <div class="flex-container7">
+
+                <p id="analysis_income_text">Аналіз доходів</p>
+                <p id="analysis_expense_text" style="display: none;">Аналіз витрат</p>
+            
+                <p id="month">Місяць:</p>
+
+                <select id="monthList">
+                <option value="1">Січень</option>
+                <option value="2">Лютий</option>
+                <option value="3">Березень</option>
+                <option value="4">Квітень</option>
+                <option value="5" selected>Травень</option>
+                <option value="6">Червень</option>
+                <option value="7">Липень</option>
+                <option value="8">Серпень</option>
+                <option value="9">Вересень</option>
+                <option value="10">Жовтень</option>
+                <option value="11">Листопад</option>
+                <option value="12">Грудень</option>
+                <option value="13">Весь рік</option>
+                </select>
+
+                <p id="year">Рік:</p>
+
+                <select id="yearList" class="flex-container7-2">
+                <option value="1">2022</option>
+                <option value="2" selected>2023</option>
+                <option value="3">2024</option>
+                </select>
+
+                <p id="on-date" >Від:</p>
+                <input id="on-date2" type="date" lang="uk-UA">
+                <p id="for-date">До:</p>
+                <input id="for-date2" type="date" lang="uk-UA">
+                <input type="submit" value="Застосувати" class="analysis-button"></input>
+                </div>
+                
+                <div id="analysis_income_conteiner">
+
+                </div>
+
+                <div id="analysis_expense_conteiner" style="display: none;">
+
+                </div>
+                <p id="in-all">Всього:</p>                           
+        </div> 
+    </div>
+</div>
+</body>
+</html>

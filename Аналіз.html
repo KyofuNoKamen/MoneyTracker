@@ -5,8 +5,8 @@
     <title>Аналіз</title>
     <link rel="stylesheet" href="Main.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
-    
-  
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.0/chart.umd.js" integrity="sha512-CMF3tQtjOoOJoOKlsS7/2loJlkyctwzSoDK/S40iAB+MqWSaf50uObGQSk5Ny/gfRhRCjNLvoxuCvdnERU4WGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <body> 
 
     <div class="main-background">
@@ -66,7 +66,7 @@
             
                 <p id="month">Місяць:</p>
 
-                <select id="monthList">
+                <select id="monthList3">
                 <option value="1">Січень</option>
                 <option value="2">Лютий</option>
                 <option value="3">Березень</option>
@@ -84,28 +84,97 @@
 
                 <p id="year">Рік:</p>
 
-                <select id="yearList" class="flex-container7-2">
+                <select id="yearList4" class="flex-container7-2">
                 <option value="1">2022</option>
                 <option value="2" selected>2023</option>
                 <option value="3">2024</option>
                 </select>
 
                 <p id="on-date" >Від:</p>
-                <input id="on-date2" type="date" lang="uk-UA">
+                <input id="on-date3" type="date" lang="uk-UA">
                 <p id="for-date">До:</p>
-                <input id="for-date2" type="date" lang="uk-UA">
+                <input id="for-date3" type="date" lang="uk-UA">
                 <input type="submit" value="Застосувати" class="analysis-button"></input>
                 </div>
                 
                 <div id="analysis_income_conteiner">
 
+                  <div>
+                    <canvas id="myChart" class="analysis_income_chart"></canvas>
+                  </div>
+
+                  <script>
+                    
+                      const ctx = document.getElementById('myChart');
+
+                      new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                        labels: ['Зарплата', 'Бізнес', 'Подарунки', 'Інвестиції',],                     
+                        datasets: [{
+                        label: 'Аналіз доходів',
+                        data: [10, 50, 3, 5, 10, 3],
+                        backgroundColor: ['red', 'blue', 'yellow', 'black',],
+                        borderColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)', ],                         
+                        borderWidth: 1
+                        }]
+                        },
+
+                        options: {
+                          indexAxis: 'y',
+                          responsive: true, // Дозволяє графіку адаптуватися до розміру контейнера
+                          maintainAspectRatio: false, // Вимикає збереження пропорцій розміру графіка
+                          scales: {
+                          y: {
+                          min: 0, // Мінімальне значення для вісі Y
+                          max: 20, // Максимальне значення для вісі Y
+                          }                       
+                        }                    
+                      }});                  
+                  </script>
+
                 </div>
 
                 <div id="analysis_expense_conteiner" style="display: none;">
 
+                  <div>
+                    <canvas id="myChart2" class="analysis_expence_chart"></canvas>
+                  </div>
+
+                  <script>
+
+                     const ctx2 = document.getElementById('myChart2');
+
+                     new Chart(ctx2, {
+                     type: 'bar',
+                     data: {
+                     labels: ['Харчування', 'Житло', "Зв'зок", 'Транспорт',],
+                     datasets: [{
+                     label: 'Аналіз витрат',
+                     data: [10, 50, 3, 5, 10, 3],
+                     backgroundColor: ['red', 'blue', 'yellow', 'black',],
+                     borderColor: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)', ],   
+                     borderWidth: 1
+                     }]
+                     },
+
+                     options: {
+                     indexAxis: 'y',
+                     responsive: true, // Дозволяє графіку адаптуватися до розміру контейнера
+                     maintainAspectRatio: false, // Вимикає збереження пропорцій розміру графіка
+                     scales: {
+                     y: {
+                     min: 0, // Мінімальне значення для вісі Y
+                     max: 20, // Максимальне значення для вісі Y
+                     }                   
+                     }
+                     }});
+                  </script>
+
                 </div>
                 <p id="in-all">Всього:</p>                           
         </div> 
+        
     </div>
 </div>
 </body>

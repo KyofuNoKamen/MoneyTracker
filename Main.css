@@ -638,7 +638,7 @@ top: 60px;
 left: 33vh; 
 }
  
-#name-conteiner {
+.name-conteiner {
 position: relative;
 color: white;
 left: 60px;
@@ -657,8 +657,7 @@ margin-top: -3px;
 background-color: #1C1D1D;
 }
 
-#input-day {
-
+.input-day {
 border: 1px solid #CFCFCF;
 height: 16px;
 padding: 2px;
@@ -677,7 +676,7 @@ margin-top: -3px;
 width: 22px;
 }
   
-#input-day2 {
+.input-day2 {
 
 border: 1px solid #CFCFCF;
 height: 16px;
@@ -755,7 +754,6 @@ top: 60px;
 position: relative;
 left: 60px;
 display: flex;
-
 }
       
 .flex-container6 > * {
@@ -830,7 +828,6 @@ height: 200px;
 background-color: #1C1D1D;
 border-radius: 5px;
 position: relative;
-
 left: 33vh;
 }
 
@@ -1000,7 +997,7 @@ height: 350px;
 overflow: auto;
 }
 
-#target-table1 {
+.target-table1 {
 position: relative;
 height: 50px; 
 color: white;
@@ -1010,7 +1007,7 @@ max-width: 150px;
 word-wrap: break-word;
 }
     
-#target-table2 {
+.target-table2 {
 position: relative;
 height: 50px; 
 color: white;
@@ -1078,7 +1075,6 @@ margin-top: 20px;
 
 #analysis_income_btn {
 position: relative;
-
 font-size: 26px;  
 background-color: #1C1D1D;
 cursor: pointer;
@@ -1110,7 +1106,7 @@ cursor: pointer;
 #analysis_income_conteiner {
 left: 40px;  
 position: relative;
-background-color: green;
+background-color: #34FFCB;
 width: 1020px;
 height: 340px;
 margin-top: 35px;
@@ -1119,7 +1115,7 @@ margin-top: 35px;
 #analysis_expense_conteiner {
 left: 40px;  
 position: relative;
-background-color: red;
+background-color: #3EFFB1;
 width: 1020px;
 height: 340px;
 margin-top: 35px;
@@ -1133,3 +1129,58 @@ font-size: 22px;
 margin-top: 20px;
 left: 100vh;
 }
+
+#monthList3 {
+margin-top: 25px;
+height: 18px;
+width: 80px;
+position: relative;
+background-color: #fff;
+}
+
+#yearList4 {
+margin-top: 25px;
+height: 18px;
+width: 80px;
+position: relative;
+background-color: #fff;
+}
+
+#on-date3 {
+position: relative;
+color: white;
+font-size: 16px;
+margin-top: 26px;
+border: 1px solid #CFCFCF;
+height: 16px;
+float: none;
+width: 105px;
+color: black;
+background: white;
+}
+
+#for-date3 {
+position: relative;
+color: white;
+font-size: 16px;
+margin-top: 26px;
+border: 1px solid #CFCFCF;
+height: 16px;
+float: none;
+width: 105px;
+color: black;
+background: white;
+}
+
+.analysis_income_chart {
+height: 340px;
+}
+
+.analysis_expence_chart {
+max-height: 340px;
+}
+
+
+
+/*Позики та кредити*/
+

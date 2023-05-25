@@ -1,8 +1,10 @@
 body {
   font-family: 'Open Sans',sans-serif;
   font-weight: 500;
-  color:#fff
+  color:#fff;
+  background-color: #3F3D3F;
 }
+
 .info p {
   text-align:center;
   color: #999;
@@ -58,7 +60,6 @@ hr {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #f2f2f2;
   z-index:-1;
 }
 
@@ -72,6 +73,7 @@ hr {
   margin-top: 60px;
   box-shadow: 1px 5px 10px 1px #333;
   overflow:hidden;
+  background-color: #1C1D1D;
 }
 
 .menu {
@@ -216,29 +218,9 @@ input.submit {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.bg-image {
-    display: block;
-    position: absolute;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: 50% 50%;
-        background-repeat: no-repeat;
+.btn {
+    color: white;
 }
+
+
 

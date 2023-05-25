@@ -3,63 +3,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Записи</title>
-    <link rel="stylesheet" href="Записи.css" media="screen">
+    <link rel="stylesheet" href="Main.css" media="screen">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet" />
-
+    
+  
 <body> 
-<!-- -->
-    <div class="container">
-       
-        <div class="container2">
-             <div class="container3"> 
-                MyCASH
-                дата
-             </div>
+
+    <div class="main-background">
+
+      <div class="top-panel"></div>
+      
+        <div class="side-panel">
+           
              <button style="color: yellow;" id="income-btn" >Дохід</button>
              <button style="color: white;" id="expense-btn">Витрата</button>
 
-             <div class="container4">
+             <div class="addition">
 
                 <p id="incomeText">Додайте свій дохід</p>
                 <p id="expenseText" style="display: none;">Додайте свою витрату</p>
-                <p id="id3">Категорія</p>
+                
+                <div class="flex-container2">
+
+                <p id="category">Категорія:</p>
 
                 <select id="incomeList">
-                    <option value="1">Елемент 1</option>
-                    <option value="2">Елемент 2</option>
-                    <option value="3">Елемент 3</option>
+                    <option value="1"selected>Зарплата</option>
+                    <option>Бізнес</option>
+                    <option>% з депозиту</option>
+                    <option>Подарунки</option>
+                    <option>Інвестиції</option>
+                    <option>Інше</option>
                   </select>
 
                   <select id="expenseList" style="display: none;">
-                    <option value="1">Елемент 4</option>
-                    <option value="2">Елемент 5</option>
-                    <option value="3">Елемент 6</option>
+                    <option>Харчування</option>
+                    <option>Житло</option>
+                    <option>Зв'язок</option>
+                    <option>Транспорт</option>
+                    <option>Відпочинок</option>
+                    <option>Цілі</option>
+                    <option>Інше</option>
                   </select>
 
-                  <p id="id4">Варіант</p>
+                  <p id="version">Варіант:</p>
 
                   <select id="moneyList">
-                    <option value="1">Елемент 1</option>
-                    <option value="2">Елемент 2</option>
-                    <option value="3">Елемент 3</option>
+                    <option value="1">Готівка</option>
+                    <option value="2">Рахунок в банку</option>
+                    <option value="3">Депозит</option>
                   </select>
 
-                  <p id="id5">Сума</p>
-                  <input type="text" id="id6"></input>
+                  <p id="sum">Сума:</p>
+                  <input type="number" id="input1"></input>
 
-                  <p id="id9"> Дата</p>
+                  <p id="date"> Дата:</p>
+                  <input id="input2" type="date" lang="uk-UA">
 
-                  <input type="text" value="01.05.2023" id="id8"></input>
+                  <script>
+                    const today = new Date().toISOString().substr(0, 10); // получаем сегодняшнюю дату в формате YYYY-MM-DD
+                    document.getElementById("input2").value = today; // устанавливаем значение поля ввода на сегодняшнюю дату
+                  </script>
 
-                  <p id="id10"> Примітка</p>
-                  <input type="text" id="id11"></input>
+                  <p id="note"> Примітка:</p>
+                  <input type="text" id="input3"></input>
 
+                  <input type="submit" value="Записати" id="record-button"></input>
+                
+                  </div>
+                  
                   <script>
 
                 const incomeBtn = document.getElementById('income-btn');
                 const expenseBtn = document.getElementById('expense-btn');
 
-                // обрабник кліку на кнопку доходів
+                // обробник кліку на кнопку доходів
                 incomeBtn.addEventListener('click', function() {
                 // ховаємо форму витрат і показуємо форму доходів
                 expenseList.style.display = 'none';
@@ -68,9 +86,13 @@
                 expenseBtn.style.color = 'white';
                 incomeList.style.display = 'block';
                 incomeText.style.display = 'block';
+                incomeText2.style.display = 'block';
+                expenseText2.style.display = 'none';
+                incomeTable.style.display = 'block';
+                expenseTable.style.display = 'none';
                 });
 
-                // обрабник кліку на кнопку витрат
+                // обробник кліку на кнопку витрат
                 expenseBtn.addEventListener('click', function() {
                 // ховаємо форму доходів і показуємо форму витрат
                 incomeList.style.display = 'none';
@@ -79,28 +101,94 @@
                 expenseBtn.style.color = 'yellow';
                 expenseList.style.display = 'block';
                 expenseText.style.display = 'block';
-              
+                incomeText2.style.display = 'none';
+                expenseText2.style.display = 'block';
+                incomeTable.style.display = 'none';
+                expenseTable.style.display = 'block';
                 });
 
-                  </script>
-                
-                <input type="submit" value="Записати" id="id7"></input>
-
+                  </script>               
+  
              </div>
 
-             <div class="container5">
+             <div class="reflection">
+
+              <div class="flex-container2">
+
+              <p id="incomeText2">Записи доходів</p>
+              <p id="expenseText2" style="display: none;">Записи витрат</p>
+            
+              <p id="month">Місяць:</p>
+
+              <select id="monthList">
+                <option value="1">Січень</option>
+                <option value="2">Лютий</option>
+                <option value="3">Березень</option>
+                <option value="4">Квітень</option>
+                <option value="5" selected>Травень</option>
+                <option value="6">Червень</option>
+                <option value="7">Липень</option>
+                <option value="8">Серпень</option>
+                <option value="9">Вересень</option>
+                <option value="10">Жовтень</option>
+                <option value="11">Листопад</option>
+                <option value="12">Грудень</option>
+                <option value="13">Весь рік</option>
+              </select>
+
+              <p id="year">Рік:</p>
+
+              <select id="yearList" class="flex-container3">
+                <option value="1">2022</option>
+                <option value="2" selected>2023</option>
+                <option value="3">2024</option>
+              </select>
+
+              <p id="on-date" >Від:</p>
+              <input id="on-date2" type="date" lang="uk-UA">
+
+              <p id="for-date">До:</p>
+              <input id="for-date2" type="date" lang="uk-UA">
               
-             </div>
+              <input type="submit" value="Застосувати" id="record-button2"></input>
+              </div>
+                <div class="table">
+                    
+                  <table>
+                        <tr>
+                          <th id="table1">Дата</th>
+                          <th id="table1">Категорія</th>
+                          <th id="table1">Варіант</th>  
+                          <th id="table1">Сума</th>
+                          <th id="table2">Примітка</th>
+                        </tr>
+                        <tr>
+                          <td id="table1">1</td>
+                          <td id="table1">1</td>
+                          <td id="table1">1</td>
+                          <td id="table1">1</td>
+                          <td id="table2">1</td>
+                        </tr>
+                      </div> 
 
+                      <table style="display: none;">
+                          <tr>
+                          <th id="table1">Дата</th>
+                          <th id="table1">Категорія</th>
+                          <th id="table1">Варіант</th>  
+                          <th id="table1">Сума</th>
+                          <th id="table2">Примітка</th>
+                          </tr>
+                          <tr>
+                          <td id="table1">2</td>
+                          <td id="table1">2</td>
+                          <td id="table1">2</td>
+                          <td id="table1">2</td>
+                          <td id="table2">2</td>
+                          </tr>
+                    </table>                   
         </div> 
-        
-        
     </div>
-
-
 </div>
-<script>
-</script>
-
 </body>
 </html>

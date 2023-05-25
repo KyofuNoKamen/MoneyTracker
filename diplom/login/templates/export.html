@@ -1,0 +1,58 @@
+{% extends 'baseMain.html' %}
+{% block content %}
+{% load static %}
+
+    <div class="flex-col-container" style="justify-content: space-between; margin: 100px; width: 100%;">
+        <h2 style="color:white">Експорт</h2>
+
+        <div class="jumbotron ">
+            <h3 id="name-conteiner">Excel</h3>
+            <div class="flex-row-container">
+                <p id="period">Період&nbsp;з:</p>
+                <input id="input-day" type="date" lang="uk-UA">
+                <p id="do">до:</p>
+                <input id="input-day2" type="date" lang="uk-UA">
+                <input type="submit" value="Зберегти" id="button"></input>
+
+
+                <a href="{% url 'export_excel' %}" ><p style="color: white; margin: 10px;">Excel Download</p></a>
+           </div>
+        </div>
+
+        <div class="jumbotron">
+            <h3 id="name-conteiner">XML</h3>
+            <div class="flex-row-container">
+                <p id="period">Період&nbsp;з:</p>
+                <input id="input-day" type="date" lang="uk-UA">
+                <p id="do">до:</p>
+                <input id="input-day2" type="date" lang="uk-UA">
+                <input type="submit" value="Зберегти" id="button"></input>
+           </div>
+        </div>
+
+        <div class="jumbotron">
+            <h3 id="name-conteiner">CSV</h3>
+            <div class="flex-row-container">
+                <p id="period">Період&nbsp;з:</p>
+                <input id="input-day" type="date" lang="uk-UA">
+                <p id="do">до:</p>
+                <input id="input-day2" type="date" lang="uk-UA">
+                <input type="submit" value="Зберегти" id="button"></input>
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <h3 id="name-conteiner">Імпорт</h3>
+            <div class="flex-row-container">
+                <form id="period",action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file"></input>
+                </form>
+                <input type="submit" value="Зберегти" id="button2"></input>
+            </div>
+        </div>
+
+    </div>
+
+
+
+{% endblock %}

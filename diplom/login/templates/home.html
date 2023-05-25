@@ -5,7 +5,6 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
-<script src="{% static 'script.js' %}"></script>
 
 <script>
         $(document).ready(function() {
@@ -14,18 +13,18 @@
                 type: 'doughnut',
                 data: {
                     labels: [
-                        {% for income in incomes %}
-                            '{{ income.category }}',
+                        {% for key, value in incomes.items %}
+                            "{{ key }}",
                         {% endfor %}
                     ],
                     datasets: [{
                         data: [
-                            {% for income in incomes %}
-                                {{ income.amount }},
+                            {% for key, value in incomes.items %}
+                                "{{ value }}",
                             {% endfor %}
                         ],
                         backgroundColor: [
-                            {% for i in incomes   %}
+                            {% for i in incomes.items   %}
                                 "rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)",
                             {% endfor %}
                         ]
@@ -42,18 +41,18 @@
                 type: 'doughnut',
                 data: {
                     labels: [
-                        {% for spending in spends %}
-                            '{{ spending.category }}',
+                        {% for key, value in spending.items %}
+                            "{{ key }}",
                         {% endfor %}
                     ],
                     datasets: [{
                         data: [
-                            {% for spending in spends %}
-                                {{ spending.amount }},
+                            {% for key, value in spending.items %}
+                                "{{ value }}",
                             {% endfor %}
                         ],
                         backgroundColor: [
-                            {% for i in spends   %}
+                            {% for i in spending   %}
                                 "rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)",
                             {% endfor %}
                         ]
@@ -67,7 +66,11 @@
         $(document).ready(function() {
             var ctx = $("#chart-line-spending-today");
             var xValues = ["02:00", "04:00", "06:00", "08:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00", "22:00", "24:00"];
-            var yValues = [0, 0, 0, 0, 0, 100, 500, 30, 250, 1000, 0];
+            var yValues = [
+                            {% for key, value in today.items %}
+                                "{{ value }}",
+                            {% endfor %}
+                           ];
             var barColors = ["rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)", "rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)", "rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)","rgba({{ randomList|random }}, {{ randomList|random }}, {{ randomList|random }}, 0.6)"];
 
             var myLineChart = new Chart(ctx, {
@@ -90,123 +93,54 @@
 
 </script>
 
-<div class="flex-col-container main-panel">
-    <div class="flex-col-container header-container">
-        <nav class="navbar navbar-expand-lg navbar-light col-12">
-            <div style="width:4rem; background-color:black;">
-                <img src="{% static 'icons/wallet.png' %}" alt="wallet" width="50px" style="display: block; margin-left:auto; margin-right:auto;">
+<div class="flex-row-container main-content">
+    <div class="flex-col-container left-main-content" style="justify-content:space-between; margin:5px;">
+        <div class="flex-row-container up-left-main-content" style="height: 80vh;">
+            <div class="jumbotron" style="width:50%">
+                <h2 class="display-5 text-center">Доходи за місяць</h2>
+                <canvas id="chart-line-income" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 300px; height: 200px; margin: 0 0 30px 0;"></canvas>
+                {% for key, value in incomes.items %}
+                    <p class="lead">{{ key }}: {{ value }}грн</p>
+                {% endfor %}
+                <p class="lead font-weight-bold">Всього: {{ sumIncomes }}грн</p>
             </div>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="height:50px;">
-                <ul class="navbar-nav mr-auto" style="margin: auto 0 0 0; text-align:center;">
-                    <li class="nav-item">
-                        <div class="tab active-tab">
-                            <a class="nav-link text-white" href="#">Me</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="tab nonactive-tab">
-                            <a class="nav-link text-white" href="#">Sister</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <img src="{% static 'icons/plus.png' %}" alt="wallet" width="35px" style="display: block; margin-left:auto; margin-right:auto; margin: 8px 0px 0px 3px;">
-                    </li>
-                </ul>
-                <div class="flex-row-container" style="width:12rem; background-color:black; border-radius: .5rem 0 0 .5rem; height: 50px;">
-                    <img class="rounded-circle" src="{% static 'icons/profileIco.jpg' %}" alt="profileIco" width="40px" height="40px" style="display: block; margin-left:20px; margin-right:0; margin-top:5px;">
-                    <p style="color:white; margin:auto auto auto 20px;">Aleksey</p>
-                </div>
-            </div>
-        </nav>
-    </div>
-
-    <div class="flex-row-container body-container">
-        <div class="left-bar d-flex flex-column flex-shrink-0" style="width: 4rem;">
-            <div style="width:4rem;">
-                <img src="{% static 'icons/leftbar-first.png' %}" alt="leftbar-first" width="40px" class="flex-col-container" style="margin-left:auto; margin-right:auto; margin-top: 15px;">
+            <div class="jumbotron" style="width:50%">
+                <h2 class="display-5 text-center">Витрати за місяць</h2>
+                <canvas id="chart-line-spending" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 300px; height: 200px; margin: 0 0 30px 0;"></canvas>
+                {% for key, value in spending.items %}
+                    <p class="lead">{{ key }}: {{ value }}грн</p>
+                {% endfor %}
+                <p class="lead font-weight-bold">Всього: {{ sumSpending }}грн</p>
             </div>
         </div>
 
-        <div class="flex-row-container main-content">
-            <div class="flex-col-container left-main-content" style="justify-content:space-between; margin:5px;">
-                <div class="flex-row-container up-left-main-content" style="height: 80vh;">
-                    <div class="jumbotron" style="width:50%">
-                        <h2 class="display-5 text-center">Доходи за місяць</h2>
-                        <canvas id="chart-line-income" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 300px; height: 200px; margin: 0 0 30px 0;"></canvas>
-                        <p class="lead">Зарплата:   12000 грн.</p>
-                        <p class="lead">Бізнес:   1700 грн.</p>
-                        <p class="lead">Подарунки:   800 грн.</p>
-                        <p class="lead">Інвестиції:   200 грн.</p>
-                        <p class="lead font-weight-bold">Всього:   3900 грн.</p>
+        <div class="flex-row-container down-left-main-content" style="height:112px; justify-content:space-between; background-color:#1C1D1D; margin:5px; border-radius:.3rem;">
+            <div class="jumbotron curs-container">
+                <div class="vr" style="margin: 0px; padding: 0px;"></div>
+                {% for key, value in exchange.items %}
+                    <div>
+                        <p style="white-space: nowrap; padding-top:30px; padding-left: 2vw; width: 9vw;">{{key}} - {{value}}</p>
                     </div>
-
-                    <div class="jumbotron" style="width:50%">
-                        <h2 class="display-5 text-center">Витрати за місяць</h2>
-                        <canvas id="chart-line-spending" width="300" height="200" class="chartjs-render-monitor" style="display: block; width: 300px; height: 200px; margin: 0 0 30px 0;"></canvas>
-                        <p class="lead">Харчування:   1800 грн.</p>
-                        <p class="lead">Житло:   3200 грн.</p>
-                        <p class="lead">Зв'язок:   500 грн.</p>
-                        <p class="lead">Транспорт:   700 грн.</p>
-                        <p class="lead">Відпочинок:   900 грн.</p>
-                        <p class="lead font-weight-bold">Всього:   7100 грн.</p>
-                    </div>
-                </div>
-
-                <div class="flex-row-container down-left-main-content" style="height:112px; justify-content:space-between; background-color:#1C1D1D; margin:5px; border-radius:.3rem;">
-                    <div class="jumbotron curs-container" >
-                        <div>
-                            <p class="lead">USD to UAH - 36.92</p>
-                            <p class="lead">EUR to UAH - 39.12</p>
-                        </div>
-                        <div class="vr"></div>
-                    </div>
-
-
-
-                    <div class="jumbotron curs-container">
-                        <div>
-                            <p class="lead">USD to UAH - 36.92</p>
-                            <p class="lead">EUR to UAH - 39.12</p>
-                        </div>
-                        <div class="vr"></div>
-                    </div>
-
-
-
-                    <div class="jumbotron curs-container">
-                        <div>
-                            <p class="lead">USD to UAH - 36.92</p>
-                            <p class="lead">EUR to UAH - 39.12</p>
-                        </div>
-                        <div class="vr"></div>
-                    </div>
-
-
-
-                    <div class="jumbotron curs-container">
-                        <div>
-                            <p class="lead">USD to UAH - 36.92</p>
-                            <p class="lead">EUR to UAH - 39.12</p>
-                        </div>
-                    </div>
-                </div>
+                    <div class="vr" style="margin: 0px; padding: 0px;"></div>
+                {% endfor %}
             </div>
+        </div>
+    </div>
 
-            <div class="flex-col-container right-main-content" style="justify-content:space-between; margin:5px;">
-                <div class="jumbotron" style="height:45vh">
-                    <h2 class="display-5 text-center">Заощадження</h2>
-                    <p class="lead">Рахунки в банку:   0 грн.</p>
-                    <p class="lead">Готівка:   0 грн.</p>
-                    <p class="lead">Депозити:   0 грн.</p>
-                    <p class="lead font-weight-bold">Всього:   0 грн.</p>
+    <div class="flex-col-container right-main-content" style="justify-content:space-between; margin:5px;">
+        <div class="jumbotron" style="height:45vh; padding-top: 80px; padding-left: 50px;">
+            {% for key, value in savings.items %}
+                <p class="lead">{{ key }}: {{ value }}грн</p>
+            {% endfor %}
 
-                </div>
-                <div class="jumbotron" style="height:45vh;">
-                    <h2 class="display-5 text-center">Графік витрат за сьогодні</h2>
-                    <canvas id="chart-line-spending-today" width="300" height="150" class="chartjs-render-monitor" style="display: block; width: 300px; height: 150px; margin-top: 30px;"></canvas>
-                </div>
-            </div>
+            <p>{{response}}</p>
+
+            <p class="lead font-weight-bold">Всього: {{ sumSavings }}грн</p>
+        </div>
+        <div class="jumbotron" style="height:45vh;">
+            <h2 class="display-5 text-center">Графік витрат за сьогодні</h2>
+            <canvas id="chart-line-spending-today" width="300" height="150" class="chartjs-render-monitor" style="display: block; width: 300px; height: 150px; margin-top: 30px;"></canvas>
         </div>
     </div>
 </div>

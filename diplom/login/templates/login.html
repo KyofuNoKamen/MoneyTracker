@@ -3,9 +3,7 @@
 {% load static %}
 
 <div class="content">
-	<img class="bg-image" src="{% static 'img/BackgroundImage.jpg' %}">
 	<div class="container">
-		<img class="bg-image" src="{% static 'img/BackgroundLogin.jpg' %}">
 		{% if user.is_authenticated %}
 		<h1>You Are Already Logged In</h1>
 
@@ -13,7 +11,7 @@
 		<div class="col-md-6 offset-md-3">
 			<div class="menu text-center">
 				<a href="#" class="btn d-inline-block active"><h2>SIGN IN</h2></a>
-				<a href="../register" class="btn d-inline-block "><h2>SIGN UP</h2></a>
+				<a href="../register" class="btn d-inline-block "><h2 style="color: white;">SIGN UP</h2></a>
 			</div>
 			</br>
 

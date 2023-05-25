@@ -1,0 +1,163 @@
+{% extends 'baseMain.html' %}
+{% block content %}
+{% load static %}
+
+<div class="flex-col-container" style="width: 100vw; margin: 50px;">
+    <div class="flex-row-container">
+        <button class="btn btn-secondary" id="income-btn" style="margin:10px;">Дохід</button>
+        <button class="btn btn-secondary" id="expense-btn" style="margin:10px;">Витрата</button>
+    </div>
+
+    <div class="jumbotron adding-panel text-white">
+
+        <div class="flex-row-container">
+            <form method="POST" id="income">
+                <p id="incomeText">Додайте свій дохід</p>
+                {% csrf_token %}
+                {{ incomeForm.as_table }}
+                <input  class="submit" value="Записати" type="submit" name="income">
+            </form>
+            <form method="POST" id="spend" style="display: none;">
+                <p id="expenseText">Додайте свою витрату</p>
+                {% csrf_token %}
+                {{ spendForm.as_table }}
+                <input  class="submit" value="Записати" type="submit" name="spending">
+            </form>
+        </div>
+
+        <div>
+
+        </div>
+
+    </div>
+
+
+    <div class="jumbotron table-panel text-white fixed-table-body" style="height: 100%; overflow-x: auto; overflow-y: auto; box-sizing: border-box;">
+        <table id="incomeTable" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Payment Method</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for income in incomes %}
+                    <tr>
+                        <th scope="row">{{ income.id }}</th>
+                        <td>{{ income.amount }}</td>
+                        <td>{{ income.time }}</td>
+                        <td>{{ income.category }}</td>
+                        <td>{{ income.paymentMethod }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <table id="spendingTable" class="table table-bordered table-hover" style="display: none;">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Payment Method</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for spend in spending %}
+                    <tr>
+                        <th scope="row">{{ spend.id }}</th>
+                        <td>{{ spend.amount }}</td>
+                        <td>{{ spend.time }}</td>
+                        <td>{{ spend.category }}</td>
+                        <td>{{ spend.paymentMethod }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+
+
+
+<script>
+const incomeBtn = document.getElementById('income-btn');
+const expenseBtn = document.getElementById('expense-btn');
+
+// обробник кліку на кнопку доходів
+incomeBtn.addEventListener('click', function() {
+    // ховаємо форму витрат і показуємо форму доходів
+    spend.style.display = 'none';
+    income.style.display = 'block';
+    spendingTable.style.display = 'none';
+    incomeTable.style.display = 'table';
+
+    incomeBtn.classList.add('active');
+    expenseBtn.classList.remove('active');
+});
+
+// обробник кліку на кнопку витрат
+expenseBtn.addEventListener('click', function() {
+    // ховаємо форму доходів і показуємо форму витрат
+    spend.style.display = 'block';
+    income.style.display = 'none';
+    spendingTable.style.display = 'table';
+    incomeTable.style.display = 'none';
+
+    expenseBtn.classList.add('active');
+    incomeBtn.classList.remove('active');
+});
+</script>
+
+<script>
+    const today = new Date().toISOString().substr(0, 10); // получаем сегодняшнюю дату в формате YYYY-MM-DD
+    document.getElementById("input2").value = today; // устанавливаем значение поля ввода на сегодняшнюю дату
+</script>
+
+
+{% endblock %}
+
+
+    <div class="flex-row-container">
+            <p id="incomeText2">Записи доходів</p>
+            <p id="expenseText2" style="display: none;">Записи витрат</p>
+
+            <p id="month">Місяць:</p>
+
+            <select id="monthList">
+                <option value="1">Січень</option>
+                <option value="2">Лютий</option>
+                <option value="3">Березень</option>
+                <option value="4">Квітень</option>
+                <option value="5" selected>Травень</option>
+                <option value="6">Червень</option>
+                <option value="7">Липень</option>
+                <option value="8">Серпень</option>
+                <option value="9">Вересень</option>
+                <option value="10">Жовтень</option>
+                <option value="11">Листопад</option>
+                <option value="12">Грудень</option>
+                <option value="13">Весь рік</option>
+            </select>
+
+            <p id="year">Рік:</p>
+
+            <select id="yearList" class="flex-container3">
+                <option value="1">2022</option>
+                <option value="2" selected>2023</option>
+                <option value="3">2024</option>
+            </select>
+
+            <p id="on-date" >Від:</p>
+            <input id="on-date2" type="date" lang="uk-UA">
+
+            <p id="for-date">До:</p>
+            <input id="for-date2" type="date" lang="uk-UA">
+
+            <input type="submit" value="Застосувати" id="record-button2"></input>
+        </div>

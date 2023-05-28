@@ -89,14 +89,7 @@ def home(request):
             spending[obj.category] = obj.amount
         sumSpending += obj.amount
 
-    account = Account.objects.filter(user=user).first()
-    if account:
-        if account.image:
-            image = account.image.url
-            imageSplit = image.split('/')
-            image = 'images/' + imageSplit[4]
-        else:
-            image = ''
+
 
     temp_today = {}
     for obj in Spending.objects.filter(user=user):
@@ -173,12 +166,21 @@ def home(request):
         'spending': spending,
         'sumSpending': sumSpending,
         'randomList': range(0, 255, 1),
-        'image': image,
         'today': today,
         'savings': savings,
         'sumSavings': sumSavings,
         'exchange': exchange,
     }
+
+    account = Account.objects.filter(user=user).first()
+    if account:
+        if account.image:
+            image = account.image.url
+            imageSplit = image.split('/')
+            image = 'images/' + imageSplit[4]
+            context['image'] = image
+        else:
+            image = ''
 
     return render(request, "home.html", context)
 
@@ -217,13 +219,7 @@ def adding(request):
                     return redirect('adding')
 
     account = Account.objects.filter(user=user).first()
-    if account:
-        if account.image:
-            image = account.image.url
-            imageSplit = image.split('/')
-            image = 'images/' + imageSplit[4]
-        else:
-            image = ''
+
 
     context = {
         'user': user,
@@ -231,8 +227,16 @@ def adding(request):
         'spendForm': spendingForm,
         'incomes': Income.objects.filter(user=user),
         'spending': Spending.objects.filter(user=user),
-        'image': image,
     }
+
+    if account:
+        if account.image:
+            image = account.image.url
+            imageSplit = image.split('/')
+            image = 'images/' + imageSplit[4]
+            context['image'] = image
+        else:
+            image = ''
 
     return render(request, "adding.html", context)
 
@@ -262,20 +266,22 @@ def profile(request):
                 messages.success(request, "You have successfully changed Image!")
                 return redirect('profile')
 
-    if account:
-        if account.image:
-            image = account.image.url
-            imageSplit = image.split('/')
-            image = 'images/' + imageSplit[4]
-        else:
-            image = ''
+
 
     context = {
         'user': user,
         'profileForm': profileForm,
         'profileImageForm': profileImageForm,
-        'image': image
     }
+
+    if account:
+        if account.image:
+            image = account.image.url
+            imageSplit = image.split('/')
+            image = 'images/' + imageSplit[4]
+            context['image'] = image
+        else:
+            image = ''
 
     return render(request, "profile.html", context)
 
@@ -284,16 +290,19 @@ def export(request):
     user = request.user
     account = Account.objects.filter(user=user).first()
 
+    context = {
+    }
+
     if account.image:
         image = account.image.url
         imageSplit = image.split('/')
         image = 'images/' + imageSplit[4]
+        context['image'] = image
     else:
         image = ''
 
-    context = {
-        'image': image
-    }
+
+
 
     return render(request, "export.html", context)
 

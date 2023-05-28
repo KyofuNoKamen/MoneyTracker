@@ -6,7 +6,7 @@ from django.utils import timezone
 
 class Account(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-    image = models.ImageField(upload_to='login/static/images/', blank=True)
+    image = models.ImageField(upload_to='site/MoneyTracker/diplom/login/static/images/', blank=True)
 
 
 class Income(models.Model):

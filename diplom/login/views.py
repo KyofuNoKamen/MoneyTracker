@@ -71,6 +71,8 @@ def register_user(request):
 
 def home(request):
     user = request.user
+    if not user.is_authenticated:
+        return redirect('login')
     incomes = {}
     sumIncomes = 0
     for obj in Income.objects.filter(user=user):
@@ -187,6 +189,8 @@ def home(request):
 
 def adding(request):
     user = request.user
+    if not user.is_authenticated:
+        return redirect('login')
     incomeForm = IncomeAddingForm()
     spendingForm = SpendingAddingForm()
 
@@ -243,6 +247,8 @@ def adding(request):
 
 def profile(request):
     user = request.user
+    if not user.is_authenticated:
+        return redirect('login')
     account = Account.objects.filter(user=user).first()
     profileForm = ProfileForm()
     profileImageForm = ProfileImageForm()
@@ -288,6 +294,8 @@ def profile(request):
 
 def export(request):
     user = request.user
+    if not user.is_authenticated:
+        return redirect('login')
     account = Account.objects.filter(user=user).first()
 
     context = {
@@ -309,6 +317,8 @@ def export(request):
 
 def export_income_xls(request):
     user = request.user
+    if not user.is_authenticated:
+        return redirect('login')
 
     response = HttpResponse(content_type='application/ms-excel')
     response['Content-Disposition'] = 'attachment; filename="includes.xls"'

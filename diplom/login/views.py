@@ -90,12 +90,13 @@ def home(request):
         sumSpending += obj.amount
 
     account = Account.objects.filter(user=user).first()
-    if account.image:
-        image = account.image.url
-        imageSplit = image.split('/')
-        image = 'images/' + imageSplit[4]
-    else:
-        image = ''
+    if account:
+        if account.image:
+            image = account.image.url
+            imageSplit = image.split('/')
+            image = 'images/' + imageSplit[4]
+        else:
+            image = ''
 
     temp_today = {}
     for obj in Spending.objects.filter(user=user):
@@ -216,12 +217,13 @@ def adding(request):
                     return redirect('adding')
 
     account = Account.objects.filter(user=user).first()
-    if account.image:
-        image = account.image.url
-        imageSplit = image.split('/')
-        image = 'images/' + imageSplit[4]
-    else:
-        image = ''
+    if account:
+        if account.image:
+            image = account.image.url
+            imageSplit = image.split('/')
+            image = 'images/' + imageSplit[4]
+        else:
+            image = ''
 
     context = {
         'user': user,
@@ -260,12 +262,13 @@ def profile(request):
                 messages.success(request, "You have successfully changed Image!")
                 return redirect('profile')
 
-    if account.image:
-        image = account.image.url
-        imageSplit = image.split('/')
-        image = 'images/' + imageSplit[4]
-    else:
-        image = ''
+    if account:
+        if account.image:
+            image = account.image.url
+            imageSplit = image.split('/')
+            image = 'images/' + imageSplit[4]
+        else:
+            image = ''
 
     context = {
         'user': user,

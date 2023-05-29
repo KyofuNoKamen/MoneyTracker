@@ -2,10 +2,10 @@
 {% block content %}
 {% load static %}
 
-<div class="flex-col-container jumbotron" style="justify-content: space-between; margin: 100px; width: 100%;">
+<div class="flex-col-container jumbotron" style="justify-content: space-between; margin: 2%; width: 100%;">
     <div class="img" style="display: flex; justify-content: center; ">
         <div class="flex-col-container" style="justify-content: center; ">
-            <img class="rounded-circle" src="{% static image %}" style="width: 200px; height: 200px; margin: 20px;" alt="{{ image }}">
+            <img class="rounded-circle" src="{% static image %}" style="width: 200px; height: 200px; margin: 10px;" alt="{{ image }}">
             <form enctype="multipart/form-data" method="POST" id="profile-image">
                 {% csrf_token %}
                 {{ profileImageForm.as_div }}

@@ -45,11 +45,25 @@ class IncomeAddingForm(ModelForm):
         model = Income
         fields = ['amount', 'time', 'category', 'paymentMethod']
 
+    def __init__(self, *args, **kwargs):
+        super(IncomeAddingForm, self).__init__(*args, **kwargs)
+        self.fields['amount'].label = 'Кількість'
+        self.fields['time'].label = 'Час'
+        self.fields['category'].label = 'Категорія'
+        self.fields['paymentMethod'].label = 'Метод'
+
 
 class SpendingAddingForm(ModelForm):
     class Meta:
         model = Spending
         fields = ['amount', 'time', 'category', 'paymentMethod']
+
+    def __init__(self, *args, **kwargs):
+        super(SpendingAddingForm, self).__init__(*args, **kwargs)
+        self.fields['amount'].label = 'Кількість'
+        self.fields['time'].label = 'Час'
+        self.fields['category'].label = 'Категорія'
+        self.fields['paymentMethod'].label = 'Метод'
 
 
 class ProfileForm(ModelForm):

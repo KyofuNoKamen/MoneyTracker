@@ -37,16 +37,16 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Time</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Payment Method</th>
+                    <th scope="col">Кількість</th>
+                    <th scope="col">Час</th>
+                    <th scope="col">Категорія</th>
+                    <th scope="col">Метод</th>
                 </tr>
             </thead>
             <tbody>
                 {% for income in incomes %}
                     <tr>
-                        <th scope="row">{{ income.id }}</th>
+                        <th scope="row">{{ forloop.counter }}</th>
                         <td>{{ income.amount }}</td>
                         <td>{{ income.time }}</td>
                         <td>{{ income.category }}</td>
@@ -60,16 +60,16 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Time</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Payment Method</th>
+                    <th scope="col">Кількість</th>
+                    <th scope="col">Час</th>
+                    <th scope="col">Категорія</th>
+                    <th scope="col">Метод</th>
                 </tr>
             </thead>
             <tbody>
                 {% for spend in spending %}
                     <tr>
-                        <th scope="row">{{ spend.id }}</th>
+                        <th scope="row">{{ forloop.counter }}</th>
                         <td>{{ spend.amount }}</td>
                         <td>{{ spend.time }}</td>
                         <td>{{ spend.category }}</td>
@@ -121,43 +121,3 @@ expenseBtn.addEventListener('click', function() {
 
 
 {% endblock %}
-
-
-    <div class="flex-row-container">
-            <p id="incomeText2">Записи доходів</p>
-            <p id="expenseText2" style="display: none;">Записи витрат</p>
-
-            <p id="month">Місяць:</p>
-
-            <select id="monthList">
-                <option value="1">Січень</option>
-                <option value="2">Лютий</option>
-                <option value="3">Березень</option>
-                <option value="4">Квітень</option>
-                <option value="5" selected>Травень</option>
-                <option value="6">Червень</option>
-                <option value="7">Липень</option>
-                <option value="8">Серпень</option>
-                <option value="9">Вересень</option>
-                <option value="10">Жовтень</option>
-                <option value="11">Листопад</option>
-                <option value="12">Грудень</option>
-                <option value="13">Весь рік</option>
-            </select>
-
-            <p id="year">Рік:</p>
-
-            <select id="yearList" class="flex-container3">
-                <option value="1">2022</option>
-                <option value="2" selected>2023</option>
-                <option value="3">2024</option>
-            </select>
-
-            <p id="on-date" >Від:</p>
-            <input id="on-date2" type="date" lang="uk-UA">
-
-            <p id="for-date">До:</p>
-            <input id="for-date2" type="date" lang="uk-UA">
-
-            <input type="submit" value="Застосувати" id="record-button2"></input>
-        </div>

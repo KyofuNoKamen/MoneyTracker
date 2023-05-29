@@ -103,29 +103,30 @@ def home(request):
 
     today = {'02:00': 0, '04:00': 0, '06:00': 0, '08:00': 0, '10:00': 0, '12:00': 0, '14:00': 0, '16:00': 0, '18:00': 0, '20:00': 0, '22:00': 0, '24:00': 0}
     for key, value in temp_today.items():
-        if 0 < key < 2:
+        print(key)
+        if 0 <= key <= 2:
             today['02:00'] += value
-        elif 2 < key < 4:
+        elif 2 < key <= 4:
             today['04:00'] += value
-        elif 4 < key < 6:
+        elif 4 < key <= 6:
             today['06:00'] += value
-        elif 6 < key < 8:
+        elif 6 < key <= 8:
             today['08:00'] += value
-        elif 8 < key < 10:
+        elif 8 < key <= 10:
             today['10:00'] += value
-        elif 10 < key < 12:
+        elif 10 < key <= 12:
             today['12:00'] += value
-        elif 12 < key < 14:
+        elif 12 < key <= 14:
             today['14:00'] += value
-        elif 14 < key < 16:
+        elif 14 < key <= 16:
             today['16:00'] += value
-        elif 16 < key < 18:
+        elif 16 < key <= 18:
             today['18:00'] += value
-        elif 18 < key < 20:
+        elif 18 < key <= 20:
             today['20:00'] += value
-        elif 20 < key < 22:
+        elif 20 < key <= 22:
             today['22:00'] += value
-        elif 22 < key < 24:
+        elif 22 < key <= 24:
             today['24:00'] += value
 
     savings = {}

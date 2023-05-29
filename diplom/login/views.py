@@ -260,6 +260,7 @@ def profile(request):
                 user.first_name = profileForm.cleaned_data['first_name']
                 user.last_name = profileForm.cleaned_data['last_name']
                 user.email = profileForm.cleaned_data['email']
+                user.save()
 
                 messages.success(request, "You have successfully changed Profile!")
                 return redirect('profile')

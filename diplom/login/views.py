@@ -103,7 +103,6 @@ def home(request):
 
     today = {'02:00': 0, '04:00': 0, '06:00': 0, '08:00': 0, '10:00': 0, '12:00': 0, '14:00': 0, '16:00': 0, '18:00': 0, '20:00': 0, '22:00': 0, '24:00': 0}
     for key, value in temp_today.items():
-        print(key)
         if 0 <= key <= 2:
             today['02:00'] += value
         elif 2 < key <= 4:
@@ -350,3 +349,23 @@ def export_income_xls(request):
 
     return response
 
+
+def analysisView(request):
+    user = request.user
+    if not user.is_authenticated:
+        return redirect('login')
+
+    account = Account.objects.filter(user=user).first()
+
+    context = {
+    }
+
+    if account.image:
+        image = account.image.url
+        imageSplit = image.split('/')
+        image = 'images/' + imageSplit[4]
+        context['image'] = image
+    else:
+        image = ''
+
+    return render(request, "analysis.html", context)

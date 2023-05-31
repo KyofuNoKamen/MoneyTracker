@@ -13,9 +13,9 @@
 
       <div class="top-panel"></div>
       
-        <div class="side-panel">
+              <div class="side-panel">
            
-             <button style="color: yellow;" id="income-btn" >Дохід</button>
+             <button style="color: yellow;" id="income-btn">Дохід</button>
              <button style="color: white;" id="expense-btn">Витрата</button>
 
              <div class="addition">
@@ -25,7 +25,7 @@
                 
                 <div class="flex-container2">
 
-                <p id="category">Категорія:</p>
+                <p class="category">Категорія:</p>
 
                 <select id="incomeList">
                     <option value="1"selected>Зарплата</option>
@@ -46,29 +46,29 @@
                     <option>Інше</option>
                   </select>
 
-                  <p id="version">Варіант:</p>
+                  <p class="version">Варіант:</p>
 
-                  <select id="moneyList">
+                  <select class="moneyList">
                     <option value="1">Готівка</option>
                     <option value="2">Рахунок в банку</option>
                     <option value="3">Депозит</option>
                   </select>
 
-                  <p id="sum">Сума:</p>
-                  <input type="number" id="input1"></input>
+                  <p class="sum">Сума:</p>
+                  <input type="number" class="input1"></input>
 
-                  <p id="date"> Дата:</p>
-                  <input id="input2" type="date" lang="uk-UA">
+                  <p class="date"> Дата:</p>
+                  <input class="input2" type="date" lang="uk-UA">
 
                   <script>
                     const today = new Date().toISOString().substr(0, 10); // получаем сегодняшнюю дату в формате YYYY-MM-DD
                     document.getElementById("input2").value = today; // устанавливаем значение поля ввода на сегодняшнюю дату
                   </script>
 
-                  <p id="note"> Примітка:</p>
-                  <input type="text" id="input3"></input>
+                  <p class="note"> Примітка:</p>
+                  <input type="text" class="input3"></input>
 
-                  <input type="submit" value="Записати" id="record-button"></input>
+                  <input type="submit" value="Записати" class="record-button"></input>
                 
                   </div>
                   
@@ -109,18 +109,18 @@
 
                   </script>               
   
-             </div>
+               </div>
 
-             <div class="reflection">
+               <div class="reflection">
 
-              <div class="flex-container2">
+               <div class="flex-container2">
 
-              <p id="incomeText2">Записи доходів</p>
-              <p id="expenseText2" style="display: none;">Записи витрат</p>
-            
-              <p id="month">Місяць:</p>
+               <p id="incomeText2">Записи доходів</p>
+               <p id="expenseText2" style="display: none;">Записи витрат</p>
+             
+               <p class="month">Місяць:</p>
 
-              <select id="monthList">
+               <select class="monthList">
                 <option value="1">Січень</option>
                 <option value="2">Лютий</option>
                 <option value="3">Березень</option>
@@ -136,55 +136,56 @@
                 <option value="13">Весь рік</option>
               </select>
 
-              <p id="year">Рік:</p>
+              <p class="year">Рік:</p>
 
-              <select id="yearList" class="flex-container3">
+              <select class="flex-container3 yearList">
                 <option value="1">2022</option>
                 <option value="2" selected>2023</option>
                 <option value="3">2024</option>
               </select>
 
-              <p id="on-date" >Від:</p>
-              <input id="on-date2" type="date" lang="uk-UA">
+              <p class="on-date" >Від:</p>
+              <input class="on-date2" type="date" lang="uk-UA">
 
-              <p id="for-date">До:</p>
-              <input id="for-date2" type="date" lang="uk-UA">
+              <p class="for-date">До:</p>
+              <input class="for-date2" type="date" lang="uk-UA">
               
-              <input type="submit" value="Застосувати" id="record-button2"></input>
+              <input type="submit" value="Застосувати" class="record-button2"></input>
+
               </div>
                 <div class="table">
                     
-                  <table>
+                  <table id="incomeTable">
                         <tr>
-                          <th id="table1">Дата</th>
-                          <th id="table1">Категорія</th>
-                          <th id="table1">Варіант</th>  
-                          <th id="table1">Сума</th>
-                          <th id="table2">Примітка</th>
+                          <th class="table1">Дата</th>
+                          <th class="table1">Категорія</th>
+                          <th class="table1">Варіант</th>  
+                          <th class="table1">Сума</th>
+                          <th class="table2">Примітка</th>
                         </tr>
                         <tr>
-                          <td id="table1">1</td>
-                          <td id="table1">1</td>
-                          <td id="table1">1</td>
-                          <td id="table1">1</td>
-                          <td id="table2">1</td>
+                          <td class="table1">1</td>
+                          <td class="table1">1</td>
+                          <td class="table1">1</td>
+                          <td class="table1">1</td>
+                          <td class="table2">1</td>
                         </tr>
                       </div> 
 
-                      <table style="display: none;">
+                      <table id="expenseTable" style="display: none;">
                           <tr>
-                          <th id="table1">Дата</th>
-                          <th id="table1">Категорія</th>
-                          <th id="table1">Варіант</th>  
-                          <th id="table1">Сума</th>
-                          <th id="table2">Примітка</th>
+                          <th class="table1">Дата</th>
+                          <th class="table1">Категорія</th>
+                          <th class="table1">Варіант</th>  
+                          <th class="table1">Сума</th>
+                          <th class="table2">Примітка</th>
                           </tr>
                           <tr>
-                          <td id="table1">2</td>
-                          <td id="table1">2</td>
-                          <td id="table1">2</td>
-                          <td id="table1">2</td>
-                          <td id="table2">2</td>
+                          <td class="table1">2</td>
+                          <td class="table1">2</td>
+                          <td class="table1">2</td>
+                          <td class="table1">2</td>
+                          <td class="table2">2</td>
                           </tr>
                     </table>                   
         </div> 

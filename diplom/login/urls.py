@@ -13,6 +13,7 @@ urlpatterns = [
     path('logout/', views.logout_user, name='logout'),
     path('register/', views.register_user, name='register'),
     path('export/', views.export, name='export'),
+    path('analysis/', views.analysisView, name='analysis'),
     path('style.css', TemplateView.as_view(
         template_name='style.css',
         content_type='text/css')
